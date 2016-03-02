@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liwenlong.github.io/"/>
-  <updated>2016-03-02T08:49:27.271Z</updated>
+  <updated>2016-03-02T09:00:45.757Z</updated>
   <id>http://liwenlong.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://liwenlong.github.io/2016/03/02/first/"/>
     <id>http://liwenlong.github.io/2016/03/02/first/</id>
     <published>2016-03-02T06:48:22.513Z</published>
-    <updated>2016-03-02T08:49:27.271Z</updated>
+    <updated>2016-03-02T09:00:45.757Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt; 经过漫长努力，终于配置好git page + hexo的博客了，算是有了一个自己的博客了。当然摸索和查资料了好久，也踩了很多坑，也有很多东西没有做。后面再继续说~&lt;/p&gt;
 &lt;h2 id=&quot;简要过程&quot;&gt;&lt;a href=&quot;#简要过程&quot; class=&quot;headerlink&quot; title=&quot;简要过程&quot;&gt;&lt;/a&gt;简要过程&lt;/h2&gt;&lt;ol&gt;
@@ -51,7 +51,7 @@
 &lt;/li&gt;
 &lt;li&gt;hexo deploy&lt;br&gt;执行正常情况，会让你输入push到github 上面的用户名和密码&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;主题&quot;&gt;&lt;a href=&quot;#主题&quot; class=&quot;headerlink&quot; title=&quot;主题&quot;&gt;&lt;/a&gt;主题&lt;/h3&gt;&lt;p&gt;  列表：&lt;a href=&quot;https://hexo.io/themes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;br&gt;  使用方式：&lt;code&gt;git clone &amp;lt;repository&amp;gt; themes/&amp;lt;theme-name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;主题&quot;&gt;&lt;a href=&quot;#主题&quot; class=&quot;headerlink&quot; title=&quot;主题&quot;&gt;&lt;/a&gt;主题&lt;/h3&gt;&lt;p&gt;  列表：&lt;a href=&quot;https://hexo.io/themes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;br&gt;  使用方式：&lt;code&gt;git clone &amp;lt;repository&amp;gt; themes/&amp;lt;theme-name&amp;gt;&lt;/code&gt;&lt;br&gt;  本博客使用的主题是:chan&lt;/p&gt;
 </content>
     
     <summary type="html">
