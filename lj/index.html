@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>欢迎来到东方旅居</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/can.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="js/can.js"></script>
+	<style>
+	  .box1{
+	  	width: 16rem;
+	  	margin: 4rem 0rem;
+	  	background: red;
+	  }
+		
+	</style>
+	<!-- 使用<header>,<footer>,<nav> -->
+</head>
+<body>  
+		
+     	<section>
+     		<div class="ui-slider">
+			    <ul class="ui-slider-content" style="width: 300%">
+			    	<li><span style="background-image:url(img/slider_1.jpg)"></span></li>
+			        <li class="current"><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8)"></span></li>
+			        <li><span style="background-image:url(http://f.hiphotos.baidu.com/image/h%3D200/sign=d9c2d17b1a950a7b6a3549c43ad0625c/14ce36d3d539b600af3985faee50352ac75cb78c.jpg)"></span></li>
+			        <li><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTcyNDUzNjA2OSwzMDIyMzI2NDky)"></span></li>
+
+			    </ul>
+			</div>
+			<div class="select_all">
+				<div class="select_box se_1" id="dialog_btn1">
+					<img src="img/sel_1.gif" class="select_img" /><span class="select_span">旅居目的地</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+					<div class="cander_data city_data">
+						三亚
+						</br>幸福小区
+					</div>
+					
+				</div>
+				<div class="select_box se_2" id="dialog_btn2">
+					<img src="img/sel_2.gif" class="select_img" /><span class="select_span">旅居时间</span>
+					<div class="cander_data">
+						2016-1-15
+						</br>入住8天
+					</div>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+				</div>
+				<div class="select_box se_3" id="dialog_btn3">
+					<img src="img/sel_3.gif" class="select_img" /><span class="select_span">房型</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+					<div class="cander_data house_data">
+						一居室
+					</div>
+				</div>
+				<div class="select_box se_4">
+					<img src="img/sel_4.gif" class="select_img" />
+					<span class="select_span">搜索</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+				</div>
+				
+			</div>
+			
+				
+			<div id="scroller">
+				<ul class="list_sy">
+			        <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐1</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐2</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐3</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐4</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐5</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐6</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐7</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐8</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐9</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐10</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐11</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐12</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_right">
+			        	<img src="img/demo_2.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			         <li class="list_left">
+			        	<img src="img/demo_1.jpg" />
+			        	<p class="list_title">特价海景房+海鲜大餐</p>
+			        	<p class="list_des">3居每晚<label class="list_kb"></label><label class="list_money">￥299 </label></p>
+			        </li>
+			        
+			    </ul>
+		    	<div class="list_more">
+		        	正在加载中..
+		        </div>
+			</div>
+			<div class="footer_face">
+				
+			</div>
+			
+     	</section>
+     	
+     <footer class="footer">
+		 <div class="footer_content">
+		 	<a href="#" class="footer_df active">
+				 <img src="img/footer_1.gif" />
+				 <span>订房</span>
+			</a>
+			<a href="#">
+				<img src="img/footer_2.gif" />
+				 <span>管家</span>
+			</a>
+			<a href="#">
+				<img src="img/footer_3.gif" />
+				 <span>交易</span>
+			</a>
+			</a>
+			<a href="#">
+				<img src="img/footer_4.gif" />
+				 <span>交流</span>
+			</a>
+			<a href="#">	
+				<img src="img/footer_5.gif" />
+				 <span>我的</span>
+			</a>
+		 </div>
+			
+			
+	</footer>
+	<!--选择日期等弹框-->
+     <div class="ui-dialog " id="ui-calendar">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">返回</label>
+				        <label class="cal_rz">选择旅居时间</label>
+				        <label class="cal_qr" data-role="button" id="getCalender">确定<label>
+				    </header>
+				    <div id="calendar"></div>
+				</div>
+		    </div>        
+	</div>
+	 <div class="ui-dialog " id="ui-house">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">取消</label>
+				        <label class="cal_rz">房型</label>
+				    </header>
+				    
+			    	<ul class="house_chose">
+			    		<li data-role="button">1居室</li>
+			    		<li data-role="button">2居室</li>
+			    		<li data-role="button">3居室</li>
+			    		<li data-role="button">4居室</li>
+			    		<li data-role="button">别墅</li>
+			    	</ul>
+				    
+				</div>
+		    </div>        
+	</div>	
+	<div class="ui-dialog " id="ui-city">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">取消</label>
+				        <label class="cal_rz">旅居地/景区</label>
+				    </header>
+				    
+			    	<div class="select_city">
+			    		<div class="city_top">
+			    			<span class="city_search_icon">
+			    				<img src="img/city_1.gif" />
+			    			</span>
+			    			<span class="city_input">
+			    				<input type="text"  value="请输入城市或小区" />
+			    				<!-- <lable>请输入城市或小区</lable> -->
+			    			</span>
+			    			<span class="city_qx">
+			    				<img src="img/city_2.gif" />
+			    			</span>
+
+			    		</div>
+			    		<ul class="city_list_fist">
+			    			<li>
+			    				<p>三亚</p>
+			    				<dl data-role="button">
+			    					<dd>月亮湾小区</dd>
+			    					<dd>沿海小区</dd>
+									<dd>老人小区</dd>
+			    				</dl>
+			    			</li>
+			    			<li>
+			    				<p>青岛</p>
+			    				<dl data-role="button">
+			    					<dd>海洋城小区</dd>
+			    					<dd>沿海小区</dd>
+									<dd>福利小区</dd>
+			    				</dl>
+			    			</li>
+			    			<li>
+			    				<p>三门峡</p>
+			    				<dl data-role="button">
+			    					<dd>三门峡小区</dd>
+			    					<dd>啥地方小区</dd>
+									<dd>阿士小区</dd>
+			    				</dl>
+			    			</li>
+			    		</ul>
+			    	</div>
+				    
+				</div>
+		    </div>        
+	</div>
+
+
+	<script type="text/javascript">
+		$(function(){
+			setZoom();
+			setSllider();
+			// setScroll();
+		
+		})
+		////设置rem基础值
+		function setZoom(){
+			function reZoom(){
+				var html = $("html");
+				var pW = html.width();
+				var fZ =pW/320*20;
+				html.css("font-size",fZ);
+		    }
+		    reZoom();
+		    $(window).resize(function(){
+				console.log("resize");
+				reZoom();
+			})
+		}
+	   //slider
+	   function setSllider(){
+
+		    /* fz 即 FrozenJS 的意思 */
+		    var slider = new fz.Scroll('.ui-slider', {
+		        role: 'slider',
+		        indicator: true,
+		        autoplay: true,
+		        interval: 3000
+		    });
+
+		    /* 滑动开始前 */
+		    slider.on('beforeScrollStart', function(from, to) {
+		        // from 为当前页，to 为下一页
+		    })
+
+		    /* 滑动结束 */
+		    slider.on('scrollEnd', function(cruPage) {
+		        // curPage 当前页
+		    });
+
+		}
+		// function setScroll () {
+		// 	var myScroll;
+		// 	myScroll = new IScroll('#wrapper', { mouseWheel: true, tap: true });
+		// 	myScroll.on('scrollEnd', function(){
+		// 		if(this.y>this.maxScrollY-30){
+		// 			console.log("加载更多");
+		// 			addlist(this);
+		// 		}
+		// 	});
+			
+		// }
+		function addlist(dom){
+			//tod do something to ajax more
+			setTimeout(function () {
+		        dom.refresh();
+		    }, 0);
+		}
+	
+	</script>
+	 <script type="text/javascript">
+	       //弹框
+			var dia1,dia2,dia3;
+			$("#dialog_btn2").tap(function(){
+				var offsetY =$(this).offset().top;
+				window.scrollTo(0,offsetY-10);
+			   	window.scrollTo(0,offsetY-10);
+			    dia2=$("#ui-calendar").dialog("show");
+			   
+			})
+			$("#dialog_btn3").tap(function(){
+				var _this =$(this);
+				var offsetY =$(this).offset().top;
+				window.scrollTo(0,offsetY-10);
+			   	window.scrollTo(0,offsetY-10);
+			   	dia3 = $("#ui-house").dialog("show");
+			   
+			})
+			
+			$("#dialog_btn1").tap(function(){
+				var _this =$(this);
+				var offsetY =$(this).offset().top;
+				window.scrollTo(0,offsetY-10);
+			   	window.scrollTo(0,offsetY-10);
+			   	dia3 = $("#ui-city").dialog("show");
+			   
+			})
+
+
+	</script>
+
+	<script>
+		//日历
+	    setCan();
+		function setCan(){
+			var now = new Date();
+			window.cander= new Calendar({
+                        display: 4,
+                        type: 'multiple',
+                        el: $('#calendar'),
+                        currentDate: now,
+                        firstFloatMsg: ['请选择入住日期'],
+                        secondFloatMsg: ['请选择离店日期'],
+                        dateArea: 7,
+                        callback: function() {
+                            var dates = this.getSelectedDate();
+                            if (dates.length < 2) {
+                                return false;
+                            }
+                            // checkinDate = new Date(dates[0]);
+                            // checkoutDate = new Date(dates[1]);
+                            // checkinInput.val(dates[0]);
+                            // checkoutInput.val(dates[1]);
+                            // self._setCheckin(checkinDate);
+                            // self._setCheckout(checkoutDate);
+                            // self.setNight();
+                            // history.back();
+                        },
+                        bottom_center: function() {
+                            if (this.settings.type == 'multiple') {
+                                if (this._getSelectedDate().length == 1) {
+                                    return '入住';
+                                } else {
+                                    return '离店';
+                                }
+                            } else {
+                                return '';
+                            }
+                        }
+                });
+			 $("#getCalender").tap(function(){
+				var data = window.cander._getSelectedDate();
+				set_data("",getCalender)
+			 })
+		}
+	</script>
+	<script>
+		//选项卡操作
+		//1、日历确认
+		 $("#getCalender").tap(function(){
+			 var dataArr = window.cander._getSelectedDate();//[2016-03-03,2016-04-6]
+			 $(".se_2 .select_span").hide();
+			 $(".se_2 .cander_data").show();
+			 $(".se_2 .cander_data").html(dataArr[0]+"</br>"+dataArr[1]);
+		 })
+	 	$(".house_chose li").tap(function(){ 
+		   		var hoseValue = $(this).html();
+		   		console.log(hoseValue);
+		   		$(".se_3 .select_span").hide();
+				 $(".se_3 .cander_data").show();
+				 $(".se_3 .cander_data").html(hoseValue);
+		   		
+		})
+
+		$(".city_list_fist dl dd").tap(function(){
+			 var jq = $(this).html();
+			 var city = $(this).parent().parent().find("p").html();
+			 $(".se_1 .select_span").hide();
+			 $(".se_1 .city_data").show();
+			 $(".se_1 .city_data").html(city+"</br>"+jq);
+		})
+		$(".city_input input").tap(function(){
+			if($(this).val() =="请输入城市或小区" ){
+				$(this).val("");
+			}
+		})
+		$(".city_qx").tap(function(){
+			$(".city_input input").val("");
+		})
+		$(".se_4").tap(function(){
+			alert("暂无数据，正在开发中~");
+		})
+
+		//
+		var list = $(".city_list_fist li");
+		var valueText = $(".city_input input");
+		var lastModify = Date.now();
+		valueText.on("input propertychange",function(){
+				if(Date.now()-lastModify <50){
+					return;
+				}
+				var isTrue =false;
+				var value = $(this).val();
+				var curText ="";
+				list.each(function(index){
+				   curText =$(this).text();
+				   console.log(curText);
+				   if(curText.indexOf(value)!=-1){
+				   	  isTrue  =  true;
+				   	  $(this).addClass("choose");
+				   }else{
+				   	  $(this).removeClass("choose");
+				   }
+				})
+				
+				if(!isTrue) return;
+				list.parent().addClass("choose_praent");
+				lastModify = Date.now();
+			})
+	</script>	
+
+</body>
+</html>

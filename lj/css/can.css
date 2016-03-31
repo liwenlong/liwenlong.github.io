@@ -1,0 +1,94 @@
+#calendarArea{
+ width: 15rem;
+ height: 20rem;
+ font-family: "Helvetica";
+}
+.cal_header{
+	height: 2.2rem;
+	line-height: 2.2rem;
+	
+	background: #eceff4;
+	text-align: center;
+}
+.cal_header label{
+	display: inline-block;
+}
+.cal_qk {
+  font-size: .7rem;
+  width: 2rem;
+}
+.cal_rz{
+  font-size: .9rem;
+  font-weight: bold;
+  width: 9.5rem;
+
+}
+.cal_qr{
+  font-size: .7rem;
+  width: 2rem;
+}
+
+#calendar{
+	font-size: .8rem;
+	width: 15rem;
+	height: auto;
+	background: white;
+	text-align: center;
+}
+.tn-c-header{
+	line-height: 2rem;
+	text-align: center;
+}
+.tn-c-body table{
+	width: 15rem;
+}
+
+.tn-c-week{
+	width: 100%;
+	height: 1.2rem;
+	border-top: 2px solid #eceff4;
+	border-bottom: 2px solid #eceff4;
+	background: #dfdfdf;
+	font-weight: normal;
+	color: #666;
+	text-align: center;
+}
+.tn-c-week th:first-child,.tn-c-week th:last-child{
+	color: #70c858;
+}
+.tn-c-week th{
+	text-align: center;
+	font-weight: normal;
+}
+.tn-c-body .disabled{
+	color: #DCD4D4;
+
+}
+.tn-c-body .today{
+	font-size: .7rem;
+
+}
+.tn-c-body table td.selected{
+	color: #fff;
+	background: #ff7c70;
+	font-size: .5rem;
+}
+
+.tn-c-body td.beselected{
+	background-color:#fbdada;
+	color: #fff;
+}
+.tn-c-body tr{
+	height:1.8rem;
+	padding: .1rem;
+	
+}
+.tn-c-body tr td{
+   padding: 0 .1rem;
+}
+#calendarTipIn,#calendarTipOut{
+	display: none;
+}
+.city_search_icon{
+	
+}
