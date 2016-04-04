@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旅居生活</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="js/can.js"></script>
+	<link rel="stylesheet" href="css/can.css">
+</head>
+<body>
+	
+	<div class="head">
+		<div class="top">
+			<div class="logo">
+				<img src="img/i_logo.jpg" />
+			</div>
+			<div class="login">
+				<div class="new_login hide">
+					欢迎你，新用户 &nbsp;
+					<span>登录</span> &nbsp;|&nbsp;
+					<span>注册</span>
+				</div>
+				<div class="old_login">
+					<img src="img/login_pic.gif" alt="头像" class="login_tx"> 
+					<span>李文龙</span>
+					<span class="login_xl ">
+						<div class="login_info hide">
+							<a href="">个人中心</a><br/>
+							<a href="">登出</a>
+						</div>
+					</span>
+					
+				</div>
+			</div>
+		</div>
+		<div class="select">
+			 <div class="select_con">
+			 	 <div class="se_are1 ">
+			 	 	<img src="img/i_small_1.png" alt="选择城市">
+			 	 	<input class="se_1" type="text" value="选择旅居城市" />
+			 	 	<div id="city-box" class="city-box" style="display:none;">
+			 	 		<ul class="city_list">
+			 	 			<li>
+			 	 				<p>三亚</p>
+			 	 				<dl>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 				</dl>
+			 	 			</li>
+			 	 			<li>
+			 	 				<p>上海</p>
+			 	 				<dl>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 				</dl>
+			 	 			</li>
+			 	 			<li>
+			 	 				<p>北京</p>
+			 	 				<dl>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 					<dd>小区1</dd>
+			 	 				</dl>
+			 	 			</li>
+			 	 		</ul>
+			 	 	</div>
+			 	 </div>
+			 	 <div class="se_are1 ">
+			 	 	<img src="img/i_small_2.jpg" alt="">
+			 	 	<input  class="se_2" type="text" value="选择房型" />
+			 	 	<div id="house-box" class="house-box" style="display:none;">
+			 	 		<a href="#">一居室</a>
+			 	 		<a href="#">二居室</a>
+			 	 		<a href="#">三居室</a>
+			 	 		<a href="#">四居室</a>
+			 	 	</div>
+			 	 </div>
+			 	 <div class="se_are1  s1" id="selec_time">
+			 	 	<img src="img/i_small_3.jpg" alt="">
+			 	 	<input class="se_3" type="text"  readonly="" id="startenddate"  value="选择入住离开时间" />
+			 	 	<!--选择日期等弹框-->
+                    <input type="hidden" name="startdate" id="startdate" value=""/>  
+            	    <input type="hidden" name="enddate" id="enddate" value=""/>
+					<div id="calendar-box" style="display:none;"> 
+
+            </div>
+
+			 	 </div>
+
+			 	 <div class="se_are1 se_are2 ">
+			 	 		<img src="img/i_search.gif" alt="">
+			 	 		<input  class="se_4" type="button" value="搜索" />
+			 	 </div>
+			 </div>
+		</div>
+	</div>
+	<div class="fullScreen">
+		<div id="slideBox" class="slideBox">
+			<div class="bd">
+				<ul>
+					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></li>
+					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></li>
+					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic4.jpg" /></a></li>
+					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic5.jpg" /></a></li>
+					<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic6.jpg" /></a></li>
+				</ul>
+			</div>
+
+			<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+
+		</div>
+	</div>
+	<div class="channel">
+		<ul>
+			<li>
+				<img class="channel_img" src="img/i_big1.jpg" alt="预定酒店">
+				<span>预定酒店</span>
+			</li>
+			<li>
+				<img class="channel_img" src="img/i_big2.jpg" alt="预定酒店">
+				<span>预定酒店</span>
+			</li>
+			<li>
+				<img class="channel_img" src="img/i_big3.jpg" alt="预定酒店">
+				<span>预定酒店</span>
+			</li>
+			<li>
+				<img class="channel_img" src="img/i_big4.jpg" alt="预定酒店">
+				<span>预定酒店</span>
+			</li>
+			<li class="img_last">
+				<img class="channel_img" src="img/i_big5.jpg" alt="预定酒店">
+				<span>预定酒店</span>
+			</li>
+		</ul>
+	</div>
+	<div class="tuijian">
+		<div class="tj_head">
+			<icon class="i_hx"></icon>
+			<span class="i_green">旅居</span>推荐
+			<icon class="i_hx"></icon>
+		</div>
+		<ul class="tj_btn">
+			<li class="tj_btn_on"><span>三亚</span></li>
+			<li><span>吉林长白山</span></li>
+			<li><span>烟台海洋</span></li>
+			<li><span>京郊十渡</span></li>
+			<li><span>上海外滩</span></li>
+			<li><span>杭州西湖</span></li>
+		</ul>
+		<ul class="tj_wrapCon tj_wrapCon_on">
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<ul class="tj_wrapCon">
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房1</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<ul class="tj_wrapCon">
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房22</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<ul class="tj_wrapCon">
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房3</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<ul class="tj_wrapCon">
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房4</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<ul class="tj_wrapCon">
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房5</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_2.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_4.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+				<div class="tj_list_title">
+					<h3>特价海景房</h3>
+					<p>青岛</p>
+				</div>
+			</li>
+			
+		</ul>
+		<div class="tj_more">
+			更多好房 >>
+		</div>
+	</div>
+	<div class="bfdj">
+		<div class="tj_head">
+			<icon class="i_hx"></icon>
+			<span class="i_green">缤纷主题</span>推荐
+			<icon class="i_hx"></icon>
+		</div>
+		<div class="bf_content" id="bf_slideBox">
+			  <div class="bc">
+				<ul class="bf_content_ul">
+				 	<li>
+				 		<div class="bf_content_div">
+				 			<img src="img/demo_3.jpg"  height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>海上游玩度假1</h3>
+								<p>吃海鲜大餐，玩海上帆船</p>
+							</div>
+				 		</div>
+					</li>
+					<li>
+						<div class="bf_content_div">
+							<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>青山绿水2</h3>
+								<p>山间溪水进入佳境</p>
+							</div>
+						</div>
+					</li>
+					<li>
+				 		<div class="bf_content_div">
+				 			<img src="img/demo_3.jpg"  height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>海上游玩度假3</h3>
+								<p>吃海鲜大餐，玩海上帆船</p>
+							</div>
+				 		</div>
+					</li>
+					<li>
+						<div class="bf_content_div">
+							<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>青山绿水4</h3>
+								<p>山间溪水进入佳境</p>
+							</div>
+						</div>
+					</li>
+					<li>
+				 		<div class="bf_content_div">
+				 			<img src="img/demo_3.jpg"  height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>海上游玩度假5</h3>
+								<p>吃海鲜大餐，玩海上帆船</p>
+							</div>
+				 		</div>
+					</li>
+					<li>
+						<div class="bf_content_div">
+							<img src="img/demo_3.jpg" width="100%" height="100%" alt="">
+							<div class="bf_content_title">
+								<h3>青山绿水6</h3>
+								<p>山间溪水进入佳境</p>
+							</div>
+						</div>
+					</li>
+				 </ul>
+			  </div>
+			 <a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+		</div>
+		<div class="tj_more">更多好房 >></div>
+	</div>
+	<div class="footer">
+		<div class="footer_link">
+			<div class="f_link_left">
+				<a href="#">关于旅居东方</a>&nbsp;| &nbsp;
+				<a href="#">如何成为旅居会员</a>&nbsp;| &nbsp;
+				<a href="#">欢迎合作</a>&nbsp;| &nbsp;
+				<a href="#">关注旅居东方</a>&nbsp;
+			</div>
+			<div class="f_link_right">
+				客服热线：400-888-6666
+			</div>
+		</div>
+		<div class="footer_ewm">
+			<img src="img/ewm_2.jpg" alt="" />&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="img/ewm_1.jpg" alt="" />
+		</div>
+		<div class="footer_bottom">
+			<h3><b>友情链接:&nbsp;</b>
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<p>Copyright &copy 2016 北京旅居东方网络科技有限公司  www.lvju.com All Rights Reserved   京公网安备 11010522212  京ICP备1102255596号-2 </p>
+		</div>
+	</div>
+		<script type="text/javascript">
+		$(function(){
+			$(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+			$("#bf_slideBox").slide({mainCell:".bc ul",autoPlay:true,effect:"left",autoPlay:true,vis:2,delayTime:200,autoPage:true});
+		
+			// tab 
+			var btn = $(".tj_btn li");
+			var ctn =$(".tj_wrapCon");
+			btn.each(function(index){
+				$(this).on("click",function(){
+					$(".tj_btn_on").removeClass("tj_btn_on");
+					$(".tj_wrapCon_on").removeClass("tj_wrapCon_on");
+					$(this).addClass("tj_btn_on");
+					ctn.eq(index).addClass("tj_wrapCon_on")
+				})
+			})
+
+			
+			//小区选择
+			$(".se_1").on("click",function(){
+				$(this).val("");
+				$(".city-box").show();
+				$("#calendar-box").hide();
+				//
+				var list = $(".city_list li");
+				var valueText = $(".se_1");
+				var lastModify = Date.now();
+				valueText.on("input propertychange",function(){
+						if(Date.now()-lastModify <50){
+							return;
+						}
+						var isTrue =false;
+						var value = $(this).val();
+						var curText ="";
+						list.each(function(index){
+						   curText =$(this).text();
+						   console.log(curText);
+						   if(curText.indexOf(value)!=-1){
+						   	  isTrue  =  true;
+						   	  $(this).addClass("choose");
+						   }else{
+						   	  $(this).removeClass("choose");
+						   }
+						})
+						
+						if(!isTrue) return;
+						list.parent().addClass("choose_praent");
+						lastModify = Date.now();
+				})
+				//直接选中
+				$(".city-box").find("dd").on("click",function(){
+					valueText.val($(this).html());
+				})	
+
+				
+			})
+
+			//房屋选择
+			$(".se_2").on("click",function(){
+				$(this).val("");
+				$(".house-box").show();
+				$("#calendar-box").hide();
+				$(".house-box a").on("click",function(){
+					$(".se_2").val($(this).html());
+					$(".house-box").hide();
+					return false;
+				})
+			})
+			//日历
+			startCalendar("#startenddate",{});
+
+			
+			$(".se_1").on("blur",function(){
+				setTimeout(function(){
+					$(".city-box").hide();	
+				},200)
+			})
+			$(".se_2").on("blur",function(){
+				setTimeout(function(){
+					$(".house-box").hide();
+				},200)
+				
+			})
+			// $(".se_3").on("blur",function(){
+			// 	$(".city-box").hide();
+			// })
+
+		})
+			
+		</script>
+	
+</body>
+</html>
