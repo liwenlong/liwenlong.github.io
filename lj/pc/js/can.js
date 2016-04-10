@@ -248,6 +248,7 @@ function scrollPage(obj)
     }
     calendarV2.prototype.disable = function(num){
         var max = this.maxDate;
+        console.log(num);
         this.e.find('.' + this.classDayBase).each(function(index){
             if ( index >=(num+max)){
                  $(this).removeClass("show-date").addClass('unselectable');
@@ -268,6 +269,8 @@ function scrollPage(obj)
              _this.e.hide();
         })
         this.e.find('.' + this.classDayBase).on('click', function(){
+            var parent = _this.e.find('.' + _this.classDayBase);
+            var index =parent.index($(this));
             if ($(this).hasClass(_this.classDayPass) || $(this).hasClass(_this.classDayUnSelectAble)) return false;
             if ($(this).hasClass('cal_noRoom')) return false;
             if ($(this).hasClass(_this.classDaySelect) && $('.checkedday').index(this) == 0) return false;
@@ -275,14 +278,12 @@ function scrollPage(obj)
             if (!_this.checkIn && !_this.checkOut) {
                 $('.checkedday').removeClass('checkedday');
                 $(this).addClass('checkedday');
-                var index = $(this).index();
                 _this.disable(index);
             } else if (_this.checkIn && !_this.checkOut) {
                 $(this).addClass('checkedday');
             } else if (_this.checkIn && _this.checkOut) {
                 _this.clearSelect();
                 _this.e.show();
-                 var index = $(this).index();
                 _this.disable(index);
                 $(this).addClass('checkedday');
             } else if (!_this.checkIn && _this.checkOut) {

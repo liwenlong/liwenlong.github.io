@@ -63,3 +63,117 @@ a {
 em,i {
 	font-style: normal
 }
+.title_top{
+	height: 1rem;
+	padding: 0.4rem 0;
+	line-height: 1rem;
+	font-size: .9rem;
+	color: #2c393f;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+}
+.back{
+	position: absolute;
+	height: 1rem;
+	width: 1rem;
+	background: url(../img/sli_back.png) no-repeat;
+	background-size: 100%;
+	left:.55rem;
+}
+
+/*slider*/
+.ui-slider{
+	position: relative;
+	padding-top: 0px;
+	width: 16rem;
+	height: 9rem;
+}
+
+.ui-slider-content {
+	display: -webkit-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%
+}
+
+.ui-slider-content>li {
+	-webkit-box-flex: 1;
+	width: 100%;
+	height: 100%
+}
+
+.ui-slider-content>li img {
+	display: block;
+	width: 100%
+}
+
+.ui-slider-content>li span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%
+}
+
+.ui-slider-content>li.active {
+	opacity: .5
+}
+
+.ui-slider-indicators {
+	position: absolute;
+	display: -webkit-box;
+	-webkit-box-pack: end;
+	
+	bottom: 10px;
+	left:7rem;
+	font-size: 0;
+	padding: 0.1rem;
+}
+
+.ui-slider-indicators li {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 0;
+	width: .5rem;
+	height: .5rem;
+	background-color: rgba(255,255,255,.5);
+	border-radius: .25rem;
+	margin-right: .4rem;
+	-webkit-box-sizing: border-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	position: relative;
+	padding: 0;
+}
+.ui-slider-indicators li.current{
+	background-color: rgba(255,255,255,1);
+}
+
+.money{
+	width: .8rem;
+	display: inline-block;
+	background:url(../img/pirce_bg.png) right center  no-repeat;
+	background-size: .7rem .7rem;
+}
+.clear{
+	clear: both;
+}
+.h3_title{
+	background-color: #eceff4;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	padding: .4rem;
+	font-size: .7rem;
+	color: #2c393f;
+	margin: .5rem 0rem;
+}
+
+.a_right{
+	position: absolute;
+	right: .3rem;
+	top:20%;
+}

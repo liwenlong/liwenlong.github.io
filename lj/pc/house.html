@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旅居生活</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/cc.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="js/cc.js"></script>
+</head>
+<body>
+	<div class="top">
+		<div class="logo">
+			<img src="img/i_logo.jpg" />
+		</div>
+		<div class="login">
+			<div class="new_login hide">
+				欢迎你，新用户 &nbsp;
+				<span>登录</span> &nbsp;|&nbsp;
+				<span>注册</span>
+			</div>
+			<div class="old_login">
+				<img src="img/login_pic.gif" alt="头像" class="login_tx"> 
+				<span>李文龙</span>
+				<span class="login_xl">
+					<div class="login_info hide">
+						<a href="">个人中心</a><br/>
+						<a href="">登出</a>
+					</div>
+				</span>
+				
+			</div>
+		</div>
+	</div>
+	<div class="xq_content">
+		<div class="tab_location bg_ec">
+				<span class="loc" style="margin-left:10%;width:70%">三亚 >> 三亚湾小区详情 >>房间1-3-1201详情</span>
+				<span class="loc" style="width:20%"><img src="img/phone.gif" />小区管家电话：30004444</span>
+		</div>
+		<div class="house_are">
+			<!-- 橱窗图片切换 begin -->
+			<div class="house_pic">
+				<div class="pho_show clearfix user_unselectable" id="detailImageBox" onselectstart="return false">
+			  <div class="pho_show_l">
+			    <div class="pho_show_big">
+			      <div class="pho_tip_box" id="curImgIntro" style="display:none;">
+			        <div>
+			          <span>
+			          </span>
+			        </div>
+			      </div>
+			      <div valign="middle" align="center">
+			        <div id="imgMouseCusor" style="width: 800px; height: 533px; background: url(http://bj.xiaozhu.com/images/detail/null_bg.png);"
+			        class="cursor_up">
+			        </div>
+			        <img id="curBigImage" src="http://image.xiaozhustatic1.com/00,800,533/3,0,85,5997,1800,1200,56cd3eea.jpg"
+			        alt="" width="800" height="533">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="pho_show_r">
+			    <div class="pho_show_small">
+			      <div class="pho_small_prev detail-image-prev">
+			      </div>
+			      <div class="pho_small_next detail-image-next">
+			      </div>
+			      <ul class="detail-thumb-nav">
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,66,5961,1800,1200,fc4da2f9.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,66,5961,1800,1200,fc4da2f9.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic2.com/00,131,87/3,0,66,5961,1800,1200,fc4da2f9.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_cur">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,85,5997,1800,1200,56cd3eea.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,85,5997,1800,1200,56cd3eea.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic2.com/00,131,87/3,0,85,5997,1800,1200,56cd3eea.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,73,5800,1800,1200,7d58111f.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,73,5800,1800,1200,7d58111f.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic1.com/00,131,87/3,0,73,5800,1800,1200,7d58111f.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,49,5986,1800,1200,92c456c9.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,49,5986,1800,1200,92c456c9.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic3.com/00,131,87/3,0,49,5986,1800,1200,92c456c9.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,18,5890,1800,1200,dcd0901a.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,18,5890,1800,1200,dcd0901a.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic2.com/00,131,87/3,0,18,5890,1800,1200,dcd0901a.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,29,5989,1800,1200,d56cecbf.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,29,5989,1800,1200,d56cecbf.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic1.com/00,131,87/3,0,29,5989,1800,1200,d56cecbf.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,48,5877,1800,1200,50a2a751.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,48,5877,1800,1200,50a2a751.jpg"
+			          data-width="800" data-height="533" title="" src="http://image.xiaozhustatic3.com/00,131,87/3,0,48,5877,1800,1200,50a2a751.jpg"
+			          hasload="1">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,29,5990,1800,1200,a80a66b6.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,29,5990,1800,1200,a80a66b6.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,87,5932,1800,1200,9e2e38a7.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,87,5932,1800,1200,9e2e38a7.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,43,5958,1800,1200,1ec9828c.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,43,5958,1800,1200,1ec9828c.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,67,5949,1800,1200,5cb18129.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,67,5949,1800,1200,5cb18129.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,12,5757,1800,1200,206f94dc.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,12,5757,1800,1200,206f94dc.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,91,5922,1800,1200,eb47ed00.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,91,5922,1800,1200,eb47ed00.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,118,177/3,0,16,5940,1200,1800,8d46d9c3.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic1.com/00,356,533/3,0,16,5940,1200,1800,8d46d9c3.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,118,177/3,0,80,5841,1200,1800,b4e226a9.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic3.com/00,356,533/3,0,80,5841,1200,1800,b4e226a9.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,118,177/3,0,83,5890,1200,1800,3dceb941.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic2.com/00,356,533/3,0,83,5890,1200,1800,3dceb941.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,31,5774,1800,1200,64e0108c.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,31,5774,1800,1200,64e0108c.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,118,177/3,0,44,5821,1200,1800,0b35108b.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic3.com/00,356,533/3,0,44,5821,1200,1800,0b35108b.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,118,177/3,0,1,5790,1200,1800,2ee4ebd7.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic2.com/00,356,533/3,0,1,5790,1200,1800,2ee4ebd7.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,118,177/3,0,41,5929,1200,1800,88ddc3b0.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic1.com/00,356,533/3,0,41,5929,1200,1800,88ddc3b0.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,118,177/3,0,14,5891,1200,1800,d3594606.jpg"
+			          data-intro="" data-imgrate="0.66666666666667" data-bigimg="http://image.xiaozhustatic3.com/00,356,533/3,0,14,5891,1200,1800,d3594606.jpg"
+			          data-width="356" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,8,5649,1800,1200,1802ef47.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,8,5649,1800,1200,1802ef47.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,49,5987,1800,1200,94c016a6.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,49,5987,1800,1200,94c016a6.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,94,5862,1800,1200,40bcd030.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,94,5862,1800,1200,40bcd030.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,46,5891,1800,1200,8e9bc858.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,46,5891,1800,1200,8e9bc858.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic2.com/00,131,87/3,0,60,5952,1800,1200,b95c98f6.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic1.com/00,800,533/3,0,60,5952,1800,1200,b95c98f6.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic1.com/00,131,87/3,0,11,5847,1800,1200,e82194ea.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic3.com/00,800,533/3,0,11,5847,1800,1200,e82194ea.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			        <li>
+			          <div class="pho_layer">
+			          </div>
+			          <img data-src="http://image.xiaozhustatic3.com/00,131,87/3,0,32,5992,1800,1200,34eaae78.jpg"
+			          data-intro="" data-imgrate="1.5" data-bigimg="http://image.xiaozhustatic2.com/00,800,533/3,0,32,5992,1800,1200,34eaae78.jpg"
+			          data-width="800" data-height="533" title="">
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</div>
+			</div>
+			<!-- 橱窗图片切换 end -->
+			<div class="house_detail">
+				<p class="h_d1">特价海景房（青岛）</p>
+				<p class="h_d2">房间号：7-1-1208</p>
+				<p class="h_d2">朝南  2居  88㎡  1张床</p>
+				<p class="h_d3">入住3-20  离开3-25  （共5晚）</p>
+				<p class="h_d4"><span class="p_red">300</span>
+									<span class="money">&nbsp;</span>
+									/晚</p>
+				<a href="" class="h_d5">预定</a>
+				<p class="h_d6"><img src="img/i_small_1.png" /></p>
+				<p class="h_d2">地址：北京市海淀区东北旺中路 东馨园</p>
+
+			</div>
+
+
+		</div>
+		<div class="house_are2">
+			<div class="house_info">
+				<h3 class="xq_h3">房间设施</h3>
+				<div class="house_info_ss">
+					<dl>
+						<dd>
+							<img src="img/h_wifi.png" />
+							<p>WIFI</p>
+						</dd>
+						<dd>
+							<img src="img/h_computer.png" />
+							<p>电脑</p>
+						</dd>
+						<dd>
+							<img src="img/h_watch.png" />
+							<p>洗衣机</p>
+						</dd>
+						<dd>
+							<img src="img/h_kitch.png" />
+							<p>厨房</p>
+						</dd>
+						<dd>
+							<img src="img/h_drag.png" />
+							<p>药品</p>
+						</dd>
+						<dd>
+							<img src="img/h_water.png" />
+							<p>洗澡</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="house_info">
+				<h3 class="xq_h3">入住须知</h3>
+				<div class="house_info_con">
+					<p>房屋为2室一厅1厨一卫，二月份最新精装修。客厅和卧室均为实木地板，厨房为整体厨房。家电为全新家电，空调、洗衣机、电冰箱、微波炉、热水器，电视机8成新。床具和床垫也是新买的。房屋整体朝南向，阳光充足。两个卧室，一个客厅都是朝正南向的。房屋为2室一厅1厨一卫，二月份最新精装修。客厅和卧室均为实木地板，厨房为整体厨房。家电为全新家电，空调、洗衣机、电冰箱、微波炉、热水器，电视机8成新。床具和床垫也是新买的。房屋整体朝南向，阳光充足。两个卧室，一个客厅都是朝正南向的。</p>
+
+				<p>房屋为2室一厅1厨一卫，二月份最新精装修。客厅和卧室均为实木地板，厨房为整体厨房。家电为全新家电，空调、洗衣机、电冰箱、微波炉、热水器，电视机8成新。床具和床垫也是新买的。房屋整体朝南向，阳光充足。两个卧室，一个客厅都是朝正南向的。</p>	
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	<div class="clear"></div>
+	<div class="footer mt0">
+		<div class="footer_link">
+			<div class="f_link_left">
+				<a href="#">关于旅居东方</a>&nbsp;| &nbsp;
+				<a href="#">如何成为旅居会员</a>&nbsp;| &nbsp;
+				<a href="#">欢迎合作</a>&nbsp;| &nbsp;
+				<a href="#">关注旅居东方</a>&nbsp;
+			</div>
+			<div class="f_link_right">
+				客服热线：400-888-6666
+			</div>
+		</div>
+		<div class="footer_ewm">
+			<img src="img/ewm_2.jpg" alt="" />&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="img/ewm_1.jpg" alt="" />
+		</div>
+		<div class="footer_bottom">
+			<h3><b>友情链接:&nbsp;</b>
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<p>Copyright &copy 2016 北京旅居东方网络科技有限公司  www.lvju.com All Rights Reserved   京公网安备 11010522212  京ICP备1102255596号-2 </p>
+		</div>
+	</div>
+		<script type="text/javascript">
+		$(function(){
+			//橱窗的效果
+      		DetailImageBox.init();
+			
+		 })	
+	</script>
+	
+</body>
+</html>

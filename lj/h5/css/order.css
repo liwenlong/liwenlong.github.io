@@ -1,0 +1,208 @@
+.order_h{
+	border-top:1px solid #bec1c3;
+	margin: .4rem;
+    position: relative;	
+}
+.house_para img{
+	vertical-align: middle;
+}
+.order_h_left{
+	max-width: 12rem;
+
+}
+.order_h_left h3{
+	font-weight: 700;
+	color: #2c393f;
+	line-height: 1.8rem;
+	font-size: .7rem;
+}
+.order_h_left p{
+   font-size:.6rem;
+   color: #888f98;
+   line-height: 1.3rem;
+}
+.order_h_r1{
+	position: absolute;
+	right: 0;
+	width: 3rem;
+	top:1rem;
+	text-align: right;
+
+}
+.order_h_r2{
+	position: absolute;
+	right: 0;
+	width: 4rem;
+	bottom: 1rem;
+	text-align: right;
+}
+.order_money{
+	color: #ff7373;
+}
+.order_add_people{
+	margin: 1rem auto;
+	width: 7.25rem;
+	height: 2rem;
+	border: 1px solid #70c858;
+	border-radius: .3rem;
+	text-align: center;
+	line-height: 2rem;
+}
+.order_add_people img{
+	vertical-align: middle;
+	width: .9rem;
+	height: .9rem;
+	margin-right: .2rem;
+}
+.oder_total_money{
+	display:block;
+	float: right;
+	width: 6rem;
+}
+.order_list{
+	margin: .5rem;
+	position: relative;
+}
+.order_list li{
+  padding: .25rem 0;
+  border-bottom: 1px solid #eceff4;
+  height: 2rem;
+  line-height: 2rem;
+}
+.order_hb_zt{
+	position: absolute;
+	right: .2rem;
+	top:20%;
+	width: 1.4rem;
+	height: 1.4rem;
+	background: url(../img/hb_chos_1.png) no-repeat;
+	background-size: 1.4rem 1.4rem;
+}
+
+.hb_ok{
+	background: url(../img/hb_chos_2.png) no-repeat;
+	background-size: 1.4rem 1.4rem;
+} 
+.order_pay{
+	width: 12.5rem;
+	display: block;
+	margin: 3rem auto;
+	height: 2rem;
+	line-height: 2rem;
+	background: #ff7373;
+	color: #fff; 
+	border: 0;
+	border-radius: .5rem;
+
+}
+.person_list{
+	margin: .2rem 0;
+}
+.person_list li{
+   height: 3rem;
+   padding: .5rem 0;
+   border-bottom: 1px solid #eceff4;
+   position: relative;
+   text-indent: .3rem;
+}
+.person_list li h3{
+	color:#2c393f;
+	font-size: .7rem;
+	line-height: 1.5rem;
+	font-weight: 800;
+}
+.person_list li p{
+	font-weight: 600;
+   color:#5c5f63;
+   font-size: .6rem;
+   line-height:.8rem;
+}
+.person_list li span{
+	font-weight: normal;
+	color: #959ea7;
+}
+.order_b2{
+  border-top:1px solid #bec1c3;
+  border-bottom: 1px solid #bec1c3;
+}
+.person_input_list li{
+	border-bottom: 1px solid #eceff4;
+	text-indent:.5rem;
+	line-height: 2.2rem;
+	font-size: .625rem;
+
+
+}
+.person_input_list li span{
+	 color: #5c5f63;
+	 font-weight: 600;
+}
+.person_input_list li input{
+	display: inline-block;
+	color: #a9a9a9;
+	border: 0;
+	width: 9rem;
+}
+.person_add_confi{
+	width: 15rem;
+	margin: 1rem auto;
+	height: 2rem;
+	border-radius: .5rem;
+	line-height: 2rem;
+	color: #fff;
+	background: #70c858;
+	display: block;
+	text-align: center;
+
+}
+.zf_cont{
+	padding: 1rem 0;
+	text-align: center;
+	color: .7rem;
+	color: #888f98;
+	line-height: 2rem;
+}
+.zf_cont .ddh{
+	color: #2c393f;
+}
+.pay_info{
+	background: #eceff4;
+	padding: 1rem .5rem;
+	line-height: 1rem;
+	min-height: 10rem;
+	font-size: .6rem;
+}
+.pay_info h3{
+	text-align: center;
+	font-size: .8rem;
+	color: #2c393f;
+	line-height: 2rem;
+}
+.pay_ok_info{
+	margin: 3rem 0 1rem;
+	text-align: center;
+	line-height: 1rem;
+	color: #5c5f63;
+	line-height: 1.2rem;
+	font-size: .6rem;
+}
+.pay_ok_info h3{
+	font-size: .8rem;
+	color: #5c5f63;
+	line-height: 2rem;
+}
+.pay_link a{
+	width: 15rem;
+	margin: 1rem auto;
+	height: 2rem;
+	border-radius: .5rem;
+	line-height: 2rem;
+	color: #fff;
+	background: #70c858;
+	display: block;
+	text-align: center;
+
+}
+.title_top_border{
+	border: 1px solid #bec1c3;
+}

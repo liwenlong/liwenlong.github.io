@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>房间详情页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/house.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="title_top">
+	 	 <div class="back" title="返回上一页"></div>
+	 		1号楼 2单元 5层 02
+	 </div>
+	 <div class="sLi_slider">
+	 		<div class="ui-slider">
+			    <ul class="ui-slider-content" style="width: 300%">
+			    	<li><span style="background-image:url(img/slider_1.jpg)"></span></li>
+			        <li class="current"><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8)"></span></li>
+			        <li><span style="background-image:url(http://f.hiphotos.baidu.com/image/h%3D200/sign=d9c2d17b1a950a7b6a3549c43ad0625c/14ce36d3d539b600af3985faee50352ac75cb78c.jpg)"></span></li>
+			        <li><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTcyNDUzNjA2OSwzMDIyMzI2NDky)"></span></li>
+
+			    </ul>
+			</div>
+	 </div>
+	 <div class="house_para">
+	 	 <div class="house_left">
+	 	 	<h3>房间名称</h3>
+	 	 	<p class="house_info2">朝南  1室 1卫 88㎡ 1张床</p>
+	 	 	<p class="house-info3"><img src="img/sel_2.gif" style="vertical-align: middle;" /> 3月1日 — 3月8日  共7晚</p>
+	 	 </div>
+	 	 <div class="house_right">
+	 	 	<p class="house_price"><span class="house_money">300</span><span class="money">&nbsp;&nbsp;</span>/晚</p>
+	 	 	<a href="" class="house_order">预定</a>
+	 	 </div>
+	 </div>
+	 <div class="house_ss">
+	 		<p class="house_ss_title">房间设施</p>
+	 		<div class="house_info">
+	 			<ul class="house_icon">
+	 				<li>
+	 					<img src="img/h_wifi.png" alt="">
+	 					<span>WIFI</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_computer.png" alt="">
+	 					<span>电脑</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_kitch.png" alt="">
+	 					<span>厨房</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_drag.png" alt="">
+	 					<span>药品</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_watch.png" alt="">
+	 					<span>洗衣机</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_water.png" alt="">
+	 					<span>洗澡</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_wifi.png" alt="">
+	 					<span>WIFI</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_computer.png" alt="">
+	 					<span>电脑</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_kitch.png" alt="">
+	 					<span>厨房</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_drag.png" alt="">
+	 					<span>药品</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_watch.png" alt="">
+	 					<span>洗衣机</span>
+	 				</li>
+	 				<li>
+	 					<img src="img/h_water.png" alt="">
+	 					<span>洗澡</span>
+	 				</li>
+	 				
+	 			</ul>
+	 			<h3 class="clear"></h3>
+	 			<div class="house_phone"></div>
+	 			<div class="house_info">
+	 				<p class="house_xz">预订须知：预订成功即扣除住宿消耗的旅居币；提前7天取消预订，旅居币退还。7天内取消预订，旅居币不予以退还。</p>
+	 			</div>
+	 		</div>
+	 		
+	 </div>
+	 <script>
+	 $(function(){
+			setSllider();
+			// setScroll();
+			 // $(".sli_scroll").each(function(index){
+			 // 	 sli_p_scroll(this);
+	 })
+	  function setSllider(){
+		    /* fz 即 FrozenJS 的意思 */
+		    var slider = new fz.Scroll('.ui-slider', {
+		        role: 'slider',
+		        indicator: true,
+		        autoplay: true,
+		        interval: 3000
+		    });
+		    /* 滑动开始前 */
+		    slider.on('beforeScrollStart', function(from, to) {
+		        // from 为当前页，to 为下一页
+		    })
+		    /* 滑动结束 */
+		    slider.on('scrollEnd', function(cruPage) {
+		        // curPage 当前页
+		    });
+
+		}
+	 </script>
+</body>
+</html>
