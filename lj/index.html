@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>导航demo页面</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="stylesheet" target="_blank" href="css/base.css">
+	<link rel="stylesheet" target="_blank" href="h5/css/base.css">
+	<script src="h5/js/zepto.js"></script>
 	<style>
 		h3{
 			font-size: 200%;
@@ -22,7 +23,6 @@
 	<h1>导航demo页面</h1>
 	<h3>手机页面</h3>
 	<div class="list">
-		
 			<a target="_blank" href="h5/index.html">首页</a>
 			<a target="_blank"  href="h5/search_list.html">搜房结果</a>
 			<a target="_blank" href="h5/search_list2.html">拼房-搜房结果</a>
@@ -38,7 +38,6 @@
 	</div>
 	<h3>pc页面</h3>
 	<div class="list">
-		
 			<a target="_blank" href="pc/index.html">首页</a>
 			<a target="_blank" href="pc/search_list1.html">搜房结果</a>
 			<a target="_blank" href="pc/search_list2.html">拼房-搜房结果</a>
@@ -50,9 +49,7 @@
 	<script type="text/javascript">
 		$(function(){
 			setZoom();
-			setSllider();
 			// setScroll();
-		
 		})
 		////设置rem基础值
 		function setZoom(){
