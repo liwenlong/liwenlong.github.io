@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+	<link rel="stylesheet" href="css/can.css">
+	<style type="text/css">
+	#changeDate{
+		position: fixed;
+		bottom: 0;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="fullScreen">
+		<div id="slideBox"  class="slideBox" v-demo="list">
+			<div class="bd">
+				<ul>
+					<li v-for="item in list">
+						<img  v-bind:src="item.img_url" />
+					</li>
+				</ul>
+			</div>
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+		</div>
+	</div>
+	<input type="button" id="changeDate" value="改变slider值" />
+		<script type="text/javascript">
+		var slider_data={
+			list:[
+				{
+					img_url:"images/pic1.jpg",
+					url:"http://www.baidu.com"
+				},
+				{
+					img_url:"images/pic2.jpg",
+					url:"http://www.baidu.com"
+				},
+				{
+					img_url:"images/pic3.jpg",
+					url:"http://www.baidu.com"
+				}
+			]
+		}
+		Vue.directive('demo', {
+		  bind: function () {
+		    console.log('demo bound!')
+		  },
+		  update: function (value) {
+		  	var _this =this;
+		  	setTimeout(function(){
+		  		console.log(123);
+		  		$("#slideBox").slide({mainCell:".bd ul",autoPlay:true});
+		  	})
+		   }
+		})
+		var listVM = new Vue({
+			el:"#slideBox",
+			data:slider_data
+		})
+		$(function(){
+			$("#changeDate").on("click",function(){
+				slider_data.list=[
+				{
+					img_url:"images/pic4.jpg",
+					url:"http://www.baidu.com"
+				},
+				{
+					img_url:"images/pic5.jpg",
+					url:"http://www.baidu.com"
+				},
+				{
+					img_url:"images/pic6.jpg",
+					url:"http://www.baidu.com"
+				}
+			  ]
+			})
+		})
+		</script>
+</body>
+</html>
