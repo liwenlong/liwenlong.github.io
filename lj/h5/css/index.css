@@ -176,7 +176,6 @@
 	width: 100%;
 	background: #ccc;
 	overflow: hidden;
-	height: auto;
 }
 
 #scroller ul {
@@ -448,4 +447,12 @@
 }
 .choose_praent li.choose{
 		display: block;
+}
+
+.sy_list{
+  position: relative;
+  height: 14rem;
+}
+.scroll_content{
+	position: absolute;
 }
