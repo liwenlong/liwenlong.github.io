@@ -18,71 +18,96 @@
 </head>
 <body>
 
-	<div class="fullScreen">
-		<div id="slideBox"  class="slideBox" v-demo="list">
-			<div class="bd">
-				<ul>
-					<li v-for="item in list">
-						<img  v-bind:src="item.img_url" />
-					</li>
-				</ul>
-			</div>
-			<a class="prev" href="javascript:void(0)"></a>
-			<a class="next" href="javascript:void(0)"></a>
+	<div class="ui-slider" id="bigPic">
+	    <ul class="ui-slider-content" style="width: 300%">
+	   		 <li v-for="item in list">
+	   		 	<a href="{{item.url}}" data-som="ad">
+	   		 		<span v-bind:style="{backgroundImage:item.img_url }"></span>
+	   		 	</a>
+	   		 </li>
+	    </ul>
+	</div>
+	<div id="scroller" class="sy_list" >
+		<div class="scroll_content" id="tj_list">
+			<ul class="list_sy">
+				<li class="list_right" v-for="item in list">
+		   		 	<a href="{{item.url}}">
+		   		 		<img src="{{item.img_url}}" />
+			        	<p class="list_title">{{item.title}}</p>
+			        	<p class="list_des">{{item.des}}<label class="list_kb"></label><label class="list_money">￥{{item.money}} </label></p>
+		   		 	</a>
+		   		</li>
+		   	</ul>
 		</div>
 	</div>
-	<input type="button" id="changeDate" value="改变slider值" />
 		<script type="text/javascript">
-		var slider_data={
-			list:[
+		var glob_data={
+			bigPic:{
+			  "list":[
+				  {
+				  	img_url:"http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8",
+				  	"url":"http://www.baidu.com"
+				  },
+				  {
+				  	img_url:"http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8",
+				  	"url":"http://www.baidu.com"
+				  },
+				  {
+				  	img_url:"http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8",
+				  	"url":"http://www.baidu.com"
+				  },{
+				  	img_url:"http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8",
+				  	"url":"http://www.baidu.com"
+				  }
+				],
+			},
+			tj:{
+				list:[
 				{
-					img_url:"images/pic1.jpg",
-					url:"http://www.baidu.com"
-				},
-				{
-					img_url:"images/pic2.jpg",
-					url:"http://www.baidu.com"
-				},
-				{
-					img_url:"images/pic3.jpg",
-					url:"http://www.baidu.com"
-				}
-			]
+				  	img_url:"img/demo_1.jpg",
+				  	"url":"http://www.baidu.com",
+				  	"title":"123",
+				  	"des":"456",
+				  	"money":455
+				  },
+				  {
+				  	img_url:"img/demo_1.jpg",
+				  	"url":"http://www.baidu.com",
+				  	"title":"123",
+				  	"des":"456",
+				  	"money":455
+				  }
+				]
+			}
 		}
-		Vue.directive('demo', {
-		  bind: function () {
-		    console.log('demo bound!')
-		  },
-		  update: function (value) {
-		  	var _this =this;
-		  	setTimeout(function(){
-		  		console.log(123);
-		  		$("#slideBox").slide({mainCell:".bd ul",autoPlay:true});
-		  	})
-		   }
+
+		//vue实例
+		var bigPci_vm  = new Vue({
+			el:"#bigPic",
+			data:glob_data.bigPic
 		})
-		var listVM = new Vue({
-			el:"#slideBox",
-			data:slider_data
+		var tj_vm  = new Vue({
+			el:"#tj_list",
+			data:glob_data.tj
 		})
-		$(function(){
-			$("#changeDate").on("click",function(){
-				slider_data.list=[
-				{
-					img_url:"images/pic4.jpg",
-					url:"http://www.baidu.com"
-				},
-				{
-					img_url:"images/pic5.jpg",
-					url:"http://www.baidu.com"
-				},
-				{
-					img_url:"images/pic6.jpg",
-					url:"http://www.baidu.com"
-				}
-			  ]
-			})
-		})
+		console.log(bigPci_vm);
+		// Vue.directive('demo', {
+		//   bind: function () {
+		//     console.log('demo bound!')
+		//   },
+		//   update: function (value) {
+		//   	var _this =this;
+		//   	//回调
+		//   	setTimeout(function(){
+		//   		$(_this.el).slide({mainCell:".bd ul",autoPlay:true});
+		//   	})
+		//    }
+		// })
+		// var listVM = new Vue({
+		// 	el:"#slideBox",
+		// 	data:slider_data
+		// })
+		
 		</script>
 </body>
 </html>
