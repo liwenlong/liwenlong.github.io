@@ -56,7 +56,10 @@
 				e.index=index;
 				self.element.trigger(e);
 				self.element.unbind("dialog:action");
-				self.hide.apply(self);
+				setTimeout(function(){
+					self.hide.apply(self);
+				},300)
+				
 			});
 		},
 		toggle:function(){

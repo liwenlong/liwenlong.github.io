@@ -91,18 +91,18 @@
 			data:glob_data.tj
 		})
 		console.log(bigPci_vm);
-		// Vue.directive('demo', {
-		//   bind: function () {
-		//     console.log('demo bound!')
-		//   },
-		//   update: function (value) {
-		//   	var _this =this;
-		//   	//回调
-		//   	setTimeout(function(){
-		//   		$(_this.el).slide({mainCell:".bd ul",autoPlay:true});
-		//   	})
-		//    }
-		// })
+		Vue.directive('demo', {
+		  bind: function () {
+		    console.log('demo bound!')
+		  },
+		  update: function (value) {
+		  	var _this =this;
+		  	//回调
+		  	setTimeout(function(){
+		  		$(_this.el).slide({mainCell:".bd ul",autoPlay:true});
+		  	})
+		   }
+		})
 		// var listVM = new Vue({
 		// 	el:"#slideBox",
 		// 	data:slider_data
