@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/can.css">
 	<link rel="stylesheet" href="css/ui-dialog.css">
+	<script type="text/javascript" src="js/vue.min.js"></script>
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 	<script type="text/javascript" src="js/can.js"></script>
@@ -42,46 +43,77 @@
 	<div class="order_wrap">
 		<div class="order_content">
 			<div class="order_are order_pro">
-				<img src="img/pay_02.jpg" class="process" />
+				<img src="img/pay_01.jpg" class="process" />
 			</div>
 			<div class="order_are">
-				<div class="pay_des">
-					<h3>
-						<span class="c0_2">订单号：</span>
-						<span class="c0_3">201603290001</span>
-					</h3>
-					<h3>应付金额：<span class="p_red">500</span>
-						<span class="money">&nbsp;&nbsp;</span></h3>
+				<h3 class="xq_h3">房间信息</h3>
+				<div class="order_house rela">
+					<div class="order_house_left">
+						<h3>特价海景t房（青岛）</h3>
+						<p>房间号：7-1-1208</p>
+						<p>朝南  2居  88㎡  1张床</p>
+					</div>
+					<div class="r_are order_house_right">
+						<p>小区详情 
+							<a href="#"> <img src="img/i_r1.jpg" width="30"
+								height="30" /></a>
+						<p><span class="p_red">300</span><span class="money">&nbsp;</span>/晚</p>
+					</div>
 				</div>
 			</div>
-			<div class="order_are ">
+			<div class="order_are rela" id="person_list">
 				<h3 class="xq_h3">
-					支付方式
+					入住人信息
+					<p class="r_are add_person" id="add_person">
+						<img src="img/add.jpg" alt="">
+						添加入住人
+					</p>
 				</h3>
-				<div class="pay_des">
-					<h3>
-						<span>旅居币</span>&nbsp;&nbsp;
-						 (余额<span class="p_red">2000</span> <span class="money">&nbsp;&nbsp;</span>&nbsp;）
-						 <span class="yebz">余额不足</span>
-					</h3>
-					<h3>
-						<div class="zf bnzf">支付</div>
-						<input type="submit" value="支付" class="zf">
-					</h3>
-				</div>
-				
-			</div>
+				<div class="per_name_list">
+					<span>已有入住人</span>
+					<dl>
+						<dd  v-for="person1  in  list" v-bind:class="{ 'on': person1.ischeck}">
+							{{person1.name}}
+						</dd>
+					</dl>
 
-			
-			<div class="pay_info">
-				<h3>
-					预订须知
-				</h3>
-				<p>预订成功即扣除住宿消耗的旅居币；提前7天取消预订，旅居币退还。7天内取消预订，旅居币不予以退还</p>
+				</div>
+				<ul class="per_list">
+					<li class="firtli">
+						<span class="pl_s1">真实姓名</span>
+						<span class="pl_s2">身份证号</span>
+						<span class="pl_s3">联系方式</span>
+						<span class="pl_s4" >操作</span>
+					</li>
+					<li v-for="person2 in list">
+						<span class="pl_s1">{{person2.name}}</span>
+						<span class="pl_s2">{{person2.sid}}</span>
+						<span class="pl_s3">{{person2.phone}}</span>
+						<span class="pl_s4 pl_s5" >删除</span>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="submit">
+				总价：<span class="p_red">300000</span>&nbsp;<span class="money">&nbsp;</span>&nbsp;&nbsp;<input type="submit" value="提交订单" id="order_sub" />
 			</div>
 		</div>
 	</div>	
-	
+	<div id="add_person_dialog" class="add_person_dialog" style="display:none">
+		<p>
+			<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+			<input type="text" value="入住人姓名"/>
+		</p>
+		<p>
+			<label for="">身&nbsp;份&nbsp;证</label>
+			<input type="text" value="入住人身份证"/>
+		</p>
+		<p>
+			<label for="">联系方式</label>
+			<input type="text" value="入住人联系方式"/>
+		</p>
+		<div class="ad_person_qr">确认</div>
+	</div>
 	<script type="text/javascript">
 		$("#add_person_dialog p")
 	</script>
@@ -130,17 +162,98 @@
 		</div>
 	</div>
 		<script type="text/javascript">
+		var person={
+					"list":[
+						{
+						"name":"占三分",
+						"phone":"1541545410",
+						"sid":"411528199010130039",
+						"ischeck":false
+						},
+						{
+						"name":"李分",
+						"phone":"1541545410",
+						"sid":"411528199010130039"
+						},
+						{
+						"name":"王三分",
+						"phone":"1541545410",
+						"sid":"411528199010130039"
+						},
+						{
+						"name":"赵四",
+						"phone":"1541545410",
+						"sid":"411528199010130039"
+						},
+						{
+						"name":"a111",
+						"phone":"1541545410",
+						"sid":"411528199010130039"
+						}
+					]
+		}
+		//将当前所有历史人物前3名都放入本次订单请求里面
+			for(var i =0 ;i<person.list.length;i++){
+				if(i<=2){
+					person.list[i].ischeck = true;
+				}else{
+					person.list[i].ischeck = false;
+				}
+			}
+		//vue实例
+		var a1 =new Vue({
+			el:"#person_list",
+			data:person
+		})
+		function delPeople(list,name){
+			for(var i= 0;i<list.length;i++){
+				if(list[i].name == name){
+					list[i].ischeck =false;
+				}
+			}
+		}
+		function addPeople(list,personInfo){
+			var index=-1;
+			for(var i= 0;i<list.length;i++){
+				if(list[i].name == personInfo.name){
+					index = i;
+				}
+			}
+			if(index==-1){
+				//如果没存在的话
+				personInfo.ischeck=true;
+				list.push(personInfo);
+			}else{
+				list[index].ischeck=true;
+			}
+		}
 		$(function(){
-			
+
+			//点击历史入住人入住
+			$(".per_name_list ").on("click","dd",function(index){
+   				if(!$(this).hasClass("on")){
+   					var curName =$.trim($(this).html());
+   					addPeople(person.list,{"name":curName})
+   				}
+			})
+			//删除按钮
+			$(".per_list").on("click",".pl_s5",function(){
+				var delName = $(this).parent().find(".pl_s1").text();
+				delName =$.trim(delName);
+				delPeople(person.list,delName);
+				// for(var i = 0; i<person_list.allList)
+			})
+			//添加按钮
 			$("#add_person").on("click",function(){
-				
 				var d = dialog({
 				    content: $( "#add_person_dialog" ),
 				    title: '添加入住人'
 				});
 				d.showModal();
 			})
-		
+			//删除列表
+			//点击所有人列表到当前列表人
+
 			//login 内容
 			$(".login_xl").on("click",function(){
 				 if($(this).hasClass("hover")){
