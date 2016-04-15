@@ -15,6 +15,9 @@ $(function(){
 			})
 	}
 	setZoom();
+	$(".back").on("tap",function(){
+		window.history.back()
+	})
 
 })
 

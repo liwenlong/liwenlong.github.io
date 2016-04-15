@@ -85,7 +85,7 @@
 						<span class="pl_s3">联系方式</span>
 						<span class="pl_s4" >操作</span>
 					</li>
-					<li v-for="person2 in list">
+					<li v-for="person2 in list" v-if="person2.ischeck==true">
 						<span class="pl_s1">{{person2.name}}</span>
 						<span class="pl_s2">{{person2.sid}}</span>
 						<span class="pl_s3">{{person2.phone}}</span>
@@ -102,20 +102,20 @@
 	<div id="add_person_dialog" class="add_person_dialog" style="display:none">
 		<p>
 			<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
-			<input type="text" value="入住人姓名"/>
+			<input type="text" name="name" value="入住人姓名" onfocus='if(this.value=="入住人姓名"){this.value=""}' onblur='if(this.value==""){this.value="入住人姓名"}' />
 		</p>
 		<p>
 			<label for="">身&nbsp;份&nbsp;证</label>
-			<input type="text" value="入住人身份证"/>
+			<input type="text" name="sid" value="入住人身份证" onfocus='if(this.value=="入住人身份证"){this.value=""}' onblur='if(this.value==""){this.value="入住人身份证"}' />
 		</p>
 		<p>
 			<label for="">联系方式</label>
-			<input type="text" value="入住人联系方式"/>
+			<input type="text" name="phone" value="入住人联系方式" onfocus='if(this.value=="入住人联系方式"){this.value=""}' onblur='if(this.value==""){this.value="入住人联系方式"}'/>
 		</p>
 		<div class="ad_person_qr">确认</div>
 	</div>
 	<script type="text/javascript">
-		$("#add_person_dialog p")
+	
 	</script>
 	<div class="footer mt0">
 		<div class="footer_link">
@@ -249,7 +249,19 @@
 				    content: $( "#add_person_dialog" ),
 				    title: '添加入住人'
 				});
+				window.d1=d;
 				d.showModal();
+				$(".ad_person_qr").on("click",function(){
+					//校验输入数据的有效性
+					var addDate={};
+					var inputList=$(this).parent();
+					addDate.name =inputList.find("[name='name']").val();
+					addDate.phone =inputList.find("[name='phone']").val();
+					addDate.sid =inputList.find("[name='sid']").val();
+					addPeople(person.list,addDate);
+					d.close();
+					d.remove();
+				})
 			})
 			//删除列表
 			//点击所有人列表到当前列表人
