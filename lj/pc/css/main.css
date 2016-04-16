@@ -1052,6 +1052,9 @@ li.r_list_1i img{
 	text-decoration:underline;
 	cursor: pointer;
 }
+.pl_s6{
+	width:200px;
+}
 .submit{
 	line-height: 30px;
 	text-align: right;
@@ -1158,3 +1161,102 @@ li.r_list_1i img{
 	font-size: 16px;
 	line-height: 28px;
 }
+.success_info{
+   margin-top: 20px;
+   background: white;
+   padding: 50px;
+   text-align: center;
+}
+.success_info img{
+	padding: 10px 0 ;
+}
+.pay_go_on{
+   margin-top:30px;
+
+}
+.pay_go_on a{
+	display: inline-block;
+	width: 200px;
+	height: 38px;
+	color: white;
+	text-align: center;
+	margin-left: 30px;
+	line-height: 38px;
+	font-weight: 500;
+	border-radius: 5px;
+}
+.pay_go_on .bluea{
+	background: #70c858;
+}
+.pay_go_on .reda{
+	background: #ff7372;
+}
+.order_m_title{
+	line-height: 30px;
+	text-indent: 20px;
+	font-weight: bold;
+}
+.order_m_tit_r{
+	width: 120px;
+	height: 30px;
+	float: right;
+	color: black;
+}
+.order_m_tit_r img{
+	height: 30px;
+	vertical-align: middle;
+}
+.zhuti_list{
+	width: 1310px;
+	height: auto;
+}
+.zhuti_list li{
+	bottom: 0px;
+	height: 430px;
+	/*background: linear-gradient(to bottom, #a0a1a3 0%,#929394 100%);*/
+	display: inline-block;
+	box-sizing:border-box;
+	width: 650px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.zhuti_list li img{
+	display: block;
+	height:430px;
+	width: 100%;
+}
+.zt_content{
+	width: 1300px;
+	margin:0 auto;
+}
+.hd_cj{
+	margin-top:  -20px;
+	height: 70px;
+	background: white;
+}
+.hd_cjc{
+	width: 1240px;
+	height: 30px;
+	padding: 20px 0;
+	background: white;
+	margin:0 auto;
+	color: #86909a;
+	font-size: 18px;
+
+}
+.hd_cjc img{
+	vertical-align: bottom;
+}
+.hd_cjc_right{
+	float: right;
+	width:200px;
+	background: #ff7372;
+	line-height: 30px;
+	height: 30px;
+	text-align: center;
+	color: white;
+	border-radius: 5px; 
+	font-size: 18px;
+}
+
