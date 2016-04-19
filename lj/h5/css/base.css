@@ -180,3 +180,26 @@ em,i {
 .title_bottom{
 	border: 1px solid #bec1c3;
 }
+.mb3{
+  margin-bottom: 3rem;
+}
+.me_pink_20{
+	height: .5rem;
+	background: #eceff4;
+}
+.c_green{
+	color: #70c858;
+}
+.c_red{
+	color: #ff7373;
+}
+.b_green{
+	border-bottom: 1px solid #eceff4;
+}
+.wcj_cz_history{
+	color: #2c393f;
+	margin:1rem;
+	font-size: .625rem;
+	line-height: 1rem;
+	text-align: center;
+}
