@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单确认</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="title_top">
+	 	 <div class="back" title="返回上一页"></div>
+	 		选择入住人
+	 </div>
+	 <div class="order_b2">
+	 	<div class="order_add_people">
+	 		 <img src="img/people_add.png" alt="">添加入住人
+	 	</div>
+	 </div>
+	 
+	 
+ 
+ 	<ul class="person_list has_hb_ok">
+ 		<li>
+ 			<h3>
+ 				刘么么
+ 			</h3>
+ 			<p>身份证：<span>123444444455666</span></p>
+ 			<p>手&nbsp;机：<span>13988887777</span></p>
+ 			<div class="order_hb_zt " ></div>
+ 		</li>
+ 		<li>
+ 			<h3>
+ 				刘么么
+ 			</h3>
+ 			<p>身份证：<span>123444444455666</span></p>
+ 			<p>手&nbsp;机：<span>13988887777</span></p>
+ 			<div class="order_hb_zt " ></div>
+ 		</li>
+ 		
+ 	</ul>
+	
+	 <input type="button" id="zf" class="order_pay" value="支付"/>
+	
+	<script>
+	 $(".has_hb_ok li").on("tap",function(){
+	 	var hb=$(this).find(".order_hb_zt")
+	 	if(hb.hasClass("hb_ok")){
+ 			hb.removeClass("hb_ok");
+	 	}else{
+	 		hb.addClass("hb_ok");
+	 	}
+	 	
+	 })
+	</script>
+</body>
+</html>

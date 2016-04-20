@@ -1,0 +1,67 @@
+/*橱窗css*/
+.pho_info{ height:78px;padding-top:26px;}
+.pho_info h4{ font-size:24px; font-weight:normal; padding-bottom:5px; line-height:26px;}
+.pho_info h4 em{ display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; max-width:531px; height:26px;}
+.pho_info h4 span{ display:inline-block; background: url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice_png24.png) no-repeat 0 -74px; width:50px; height:26px; padding-left:5px; font:normal 12px/26px "宋体"; color:#fff; margin-left:5px;vertical-align:7px;}
+.pho_info p{ color:#959ea7; height:29px; line-height:29px;}
+#imgMouseCusor{position:absolute;}
+.tit_tip_box{ font-size:0; display:inline-block; vertical-align:4px;}
+.pho_info p{ color:#959ea7; }
+.new_lineB{display:inline-block;background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice_png24.png) no-repeat 0 -1836px; height:25px; width:46px; vertical-align:0px;margin-right: -2px;}
+.yanzhen,.shipai,.suding{ display:inline-block; margin-right:5px;vertical-align:middle; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice_png24.png) no-repeat 0 -1756px; height:18px; line-height:18px; color:#f5f5f5; font-size:12px; font-family:"simsun";}
+.yanzhen{ background-position:0 -1776px;}
+.shipai{ background-position:0 -1796px;}
+.suding{ background-position:0 -1816px;}
+.yanzhen,.shipai,.suding{ width:26px; padding-left:18px;}
+.pho_show{ width:920px; height:533px;overflow:hidden;}
+.pho_show_l{float:left; width:800px; height:533px;}
+.pho_show_big{position:relative; width:800px; height:533px; overflow:hidden; background:#eee;}
+.pho_show_big ul{ width:9999px; height:533px;}
+.pho_show_big li{ float:left;}
+.pho_show_big li td{ width:800px; height:533px; vertical-align:middle;}
+.pho_show_r{ float:right; width:118px;}
+.pho_show_small{ position:relative; width:118px; height:533px; overflow:hidden;z-index:2;}
+.pho_show_small ul{ height:9999px;}
+.pho_show_small li{ position:relative; float:left; width:118px; height:87px; margin-bottom:2px; cursor:pointer;overflow:hidden;text-align:center;}
+
+.pho_layer,.pho_cur{ position:absolute; left:0; top:0; width:118px; height:87px; }
+.pho_layer{background:#000;filter:Alpha(opacity=30);opacity:0.3;}
+.pho_cur{ border:3px solid #70c858; width:112px; height:81px;}
+.pho_prev,.pho_next{ position:absolute; z-index:9; top:245px; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice_png24.png) no-repeat 0 -1003px; width:40px; height:50px; cursor:pointer;}
+.pho_prev{ left:2px;}
+.pho_next{ background-position:0 -1061px; right:0;}
+.pho_small_prev,.pho_small_next{ position:absolute; left:0; z-index:9; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice_png24.png) no-repeat 0 -1121px; width:118px; height:30px; cursor:pointer;}
+.pho_small_prev{ top:0;}
+.pho_small_next{ background-position:0 -1156px; bottom:1px;}
+.pho_tip_box{ position:absolute; width:800px; height:30px; bottom:10px; text-align:center;}
+.pho_tip_box div{ display:inline-block; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/pho_bg.png) no-repeat left top; padding-left:34px; color:#fff; line-height:30px;}
+.pho_tip_box div span{ display:inline-block; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/pho_bg.png) no-repeat right -40px; padding-right:34px;}
+.border_none{ background:none!important;}
+.border_none1{ border-bottom:none!important;}
+.border_right_none{ border-right:none!important;}
+.clause_box{ border-bottom:1px solid #eee; margin:0 70px 0 70px; padding-bottom:20px;}
+.clause_box h5{ font-size:22px; color:#a5b0ba; padding:25px 0 15px; font-weight:normal;}
+.clause_w{ display:inline-block;width:680px;}
+.clause_w em{ padding-right:20px;}
+.info_content_mid{ height:114px; vertical-align:middle;}
+.bg_box{ background:#fff;}
+.order_h{ height:48px; margin-top:88px;}
+.order_bar{ position:relative; height:2px; background:#f05b72;}
+.order_bar ul{ height:2px;}
+.order_bar ul li{ width:235px; float:left; height:2px; background:#30c3a6;}
+.order_tip1,.order_tip2{ position:absolute; top:-66px; background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice.png) no-repeat 0 -2110px; width:140px; height:53px; padding:5px 10px 0; color:#fff; line-height:20px;}
+.order_tip2{ background-position:0 -2170px;}
+.pos_1,.pos_2,.pos_3,.pos_4,.pos_5,.pos_6{ position:absolute; }
+.pos_1{left:40px;}
+.pos_2{ left:275px;}
+.pos_3{ left:508px;}
+.pos_4{ left:177px;}
+.pos_5{ left:410px;}
+.pos_6{ left:640px;}
+.day_tip{ position:absolute; width:130px; text-align:center; top:-8px; height:45px;}
+.day_tip span{ display:inline-block;}
+.point1,.point2,.point3{ background:url(http://jci.xiaozhustatic3.com/e160330/images/detail/sprice.png) no-repeat 0 -1518px; width:17px; height:17px;}
+.point2{ background-position:-27px -1518px;}
+.point3{ background-position:-58px -1518px;}
+.cursor_up{ cursor:url(http://jci.xiaozhustatic3.com/e160330/images/detail/cursor_up.cur),pointer; top:0;}
+.cursor_down{ cursor:url(http://jci.xiaozhustatic3.com/e160330/images/detail/cursor_down.cur),pointer; bottom:0;}

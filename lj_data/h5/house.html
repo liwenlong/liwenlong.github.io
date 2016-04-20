@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>房间详情页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/house.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script src="js/common.js"></script>
+
+</head>
+<body>
+	<div id="houseWrap"></div>
+	<script id="house" type="text/x-template">
+		 <div class="title_top">
+		 	 <div class="back" title="返回上一页"></div>
+		 		{{title}}
+		 </div>
+		 <div class="sLi_slider">
+		 		<div class="ui-slider">
+				    <ul class="ui-slider-content" style="width: 300%">
+				       <li v-for="url in banner">
+				         <span style="background-image:url({{url}})"></span>
+				       </li>
+
+				    </ul>
+				</div>
+		 </div>
+		 <div class="house_para">
+		 	 <div class="house_left">
+		 	 	<h3>{{name}}</h3>
+		 	 	<p class="house_info2">{{info}}</p>
+		 	 	<p class="house-info3"><img src="img/sel_2.gif" style="vertical-align: middle;" /> {{start_time}} — {{end_time}}  共{{day}}晚</p>
+		 	 </div>
+		 	 <div class="house_right">
+		 	 	<p class="house_price"><span class="house_money">{{price}}</span><span class="money">&nbsp;&nbsp;</span>/{{unit}}</p>
+		 	 	<a href="" class="house_order">预定</a>
+		 	 </div>
+		 </div>
+		 <div class="house_ss">
+		 		<p class="house_ss_title">房间设施</p>
+		 		<div class="house_info">
+		 			<ul class="house_icon">
+		 			   <li v-for="icon in facilities" >
+		 			      <img src="{{img_url}}" alt="">
+		 					<span>{{name}}</span>
+		 			   </li>
+		 				<li>
+		 					<img src="img/h_wifi.png" alt="">
+		 					<span>WIFI</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_computer.png" alt="">
+		 					<span>电脑</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_kitch.png" alt="">
+		 					<span>厨房</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_drag.png" alt="">
+		 					<span>药品</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_watch.png" alt="">
+		 					<span>洗衣机</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_water.png" alt="">
+		 					<span>洗澡</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_wifi.png" alt="">
+		 					<span>WIFI</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_computer.png" alt="">
+		 					<span>电脑</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_kitch.png" alt="">
+		 					<span>厨房</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_drag.png" alt="">
+		 					<span>药品</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_watch.png" alt="">
+		 					<span>洗衣机</span>
+		 				</li>
+		 				<li>
+		 					<img src="img/h_water.png" alt="">
+		 					<span>洗澡</span>
+		 				</li>
+		 				
+		 			</ul>
+		 			<h3 class="clear"></h3>
+		 			<div class="house_phone"></div>
+		 			<div class="house_info">
+		 				<p class="house_xz">预订须知：预订成功即扣除住宿消耗的旅居币；提前7天取消预订，旅居币退还。7天内取消预订，旅居币不予以退还。</p>
+		 			</div>
+		 		</div>
+		 		
+		 </div>
+	</script>
+	<script>
+		function loadDate(){
+			var  urlObj = GetRequest();
+			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
+			var curKey = "room_id";
+			var url = "http://ljdf.dotalk.cn/api-cgi-product/detail";
+			var houseId= urlObj["room_id"];
+			 if(!houseId){
+			 	alert("页面发生异常~");
+			 }
+			 $.ajax({
+			 	url:url,
+			 	dataType:'jsonp',
+			 	data:{
+			 		"_from":"pc",
+			 		curKey:houseId
+			 	},
+			 	timeout:1000,
+			 	success:function(data){
+			 		if(data.code!==0){
+			 			alert("网络异常")
+			 		}else{
+			 			sethtml(data.data);
+			 		}
+			 	}
+			})
+		}
+		function sethtml(data){
+			window.house_vm  = new Vue({
+					el:"#houseWrap",
+					data:data,
+					replace: false,
+					template:$("#house").html()
+			}) 
+			setTimeout(function(){
+			  setSllider();	
+			})
+		}
+		loadDate();
+	</script>
+
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	
+	 <script>
+	  function setSllider(){
+		    /* fz 即 FrozenJS 的意思 */
+		    var slider = new fz.Scroll('.ui-slider', {
+		        role: 'slider',
+		        indicator: true,
+		        autoplay: true,
+		        interval: 3000
+		    });
+		    /* 滑动开始前 */
+		    slider.on('beforeScrollStart', function(from, to) {
+		        // from 为当前页，to 为下一页
+		    })
+		    /* 滑动结束 */
+		    slider.on('scrollEnd', function(cruPage) {
+		        // curPage 当前页
+		    });
+
+		}
+	 </script>
+</body>
+</html>

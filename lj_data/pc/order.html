@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旅居生活</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/can.css">
+	<link rel="stylesheet" href="css/ui-dialog.css">
+	
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="js/can.js"></script>
+	<script type="text/javascript" src="js/jPages.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+
+</head>
+<body>
+	<div class="top">
+		<div class="logo">
+			<img src="img/i_logo.jpg" />
+		</div>
+		<div class="login">
+			<div class="new_login hide">
+				欢迎你，新用户 &nbsp;
+				<span>登录</span> &nbsp;|&nbsp;
+				<span>注册</span>
+			</div>
+			<div class="old_login">
+				<img src="img/login_pic.gif" alt="头像" class="login_tx"> 
+				<span>李文龙</span>
+				<span class="login_xl">
+					<div class="login_info hide">
+						<a href="">个人中心</a><br/>
+						<a href="">登出</a>
+					</div>
+				</span>
+				
+			</div>
+		</div>
+	</div>
+	<!--旅居内容页-->
+	<div class="order_wrap">
+		<div class="order_content">
+			<div class="order_are order_pro">
+				<img src="img/pay_01.jpg" class="process" />
+			</div>
+			<div class="order_are">
+				<h3 class="xq_h3">房间信息</h3>
+				<div class="order_house rela">
+					<div class="order_house_left">
+						<h3>特价海景t房（青岛）</h3>
+						<p>房间号：7-1-1208</p>
+						<p>朝南  2居  88㎡  1张床</p>
+					</div>
+					<div class="r_are order_house_right">
+						<p>小区详情 
+							<a href="#"> <img src="img/i_r1.jpg" width="30"
+								height="30" /></a>
+						<p><span class="p_red">300</span><span class="money">&nbsp;</span>/晚</p>
+					</div>
+				</div>
+			</div>
+			<div class="order_are rela">
+				<h3 class="xq_h3">
+					入住人信息
+					<p class="r_are add_person" id="add_person">
+						<img src="img/add.jpg" alt="">
+						添加入住人
+					</p>
+				</h3>
+				<div class="per_name_list">
+					<span>已有入住人</span>
+					<dl>
+						<dd class="on">
+							李四
+						</dd>
+						<dd>
+							孙李三
+						</dd>
+						<dd>
+							赵四
+						</dd>
+						<dd class="on">
+							李四
+						</dd>
+						<dd>
+							孙李三
+						</dd>
+						<dd>
+							赵四
+						</dd>
+					</dl>
+
+				</div>
+				<ul class="per_list">
+					<li class="firtli">
+						<span class="pl_s1">真实姓名</span>
+						<span class="pl_s2">身份证号</span>
+						<span class="pl_s3">联系方式</span>
+						<span class="pl_s4" >操作</span>
+					</li>
+					<li>
+						<span class="pl_s1">刘齐波</span>
+						<span class="pl_s2">411528199010130039</span>
+						<span class="pl_s3">15652601212</span>
+						<span class="pl_s4 pl_s5" >删除</span>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="submit">
+				总价：<span class="p_red">300000</span>&nbsp;<span class="money">&nbsp;</span>&nbsp;&nbsp;<input type="submit" value="提交订单" id="order_sub" />
+			</div>
+		</div>
+	</div>	
+	<div id="add_person_dialog" class="add_person_dialog" style="display:none">
+		<p>
+			<label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+			<input type="text" value="入住人姓名"/>
+		</p>
+		<p>
+			<label for="">身&nbsp;份&nbsp;证</label>
+			<input type="text" value="入住人身份证"/>
+		</p>
+		<p>
+			<label for="">联系方式</label>
+			<input type="text" value="入住人联系方式"/>
+		</p>
+		<div class="ad_person_qr">确认</div>
+	</div>
+	<script type="text/javascript">
+		$("#add_person_dialog p")
+	</script>
+	<div class="footer mt0">
+		<div class="footer_link">
+			<div class="f_link_left">
+				<a href="#">关于旅居东方</a>&nbsp;| &nbsp;
+				<a href="#">如何成为旅居会员</a>&nbsp;| &nbsp;
+				<a href="#">欢迎合作</a>&nbsp;| &nbsp;
+				<a href="#">关注旅居东方</a>&nbsp;
+			</div>
+			<div class="f_link_right">
+				客服热线：400-888-6666
+			</div>
+		</div>
+		<div class="footer_ewm">
+			<img src="img/ewm_2.jpg" alt="" />&nbsp;&nbsp;&nbsp;&nbsp;
+			<img src="img/ewm_1.jpg" alt="" />
+		</div>
+		<div class="footer_bottom">
+			<h3><b>友情链接:&nbsp;</b>
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+				<a href="#">北京短租房</a>&nbsp;&nbsp;
+			</h3>
+			<p>Copyright &copy 2016 北京旅居东方网络科技有限公司  www.lvju.com All Rights Reserved   京公网安备 11010522212  京ICP备1102255596号-2 </p>
+		</div>
+	</div>
+		<script type="text/javascript">
+		$(function(){
+			
+			$("#add_person").on("click",function(){
+				
+				var d = dialog({
+				    content: $( "#add_person_dialog" ),
+				    title: '添加入住人'
+				});
+				d.showModal();
+			})
+		
+			//login 内容
+			$(".login_xl").on("click",function(){
+				 if($(this).hasClass("hover")){
+				 	$(this).removeClass("hover");
+				 	$(this).find(".login_info").hide();
+				 }else{
+				 	$(this).addClass("hover");
+				 	$(this).find(".login_info").show();
+				 }
+			})
+			$(".se_tab").on("click",".tab_li_label",function(){
+				if($(this).hasClass("on")){
+				 	$(this).removeClass("on");
+				 }else{
+				 	$(this).addClass("on");
+				 }
+			})
+			$(".se_tab").on("click",".tab_li_tj",function(){
+			  var parent =$(this).parent();
+			  var xz = $(this).parent().find(".tab_li_label.on");
+			  xz.removeClass("on");
+			})
+			
+		})
+		
+		</script>
+	
+</body>
+</html>

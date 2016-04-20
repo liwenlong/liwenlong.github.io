@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="title_top">
+	 	 <div class="back" title="返回上一页"></div>
+	 		支付
+	 </div>
+	  <div class="zf_cont">
+	  	  <p>
+	  	  	订单编号: <span>2016030118000001</span>
+	  	  </p>
+	  	  <p>  <span class="order_money">1200</span><span class="money"> &nbsp;</span></p>
+	  	
+
+	  </div>
+	 <input type="button" id="zf" class="order_pay" value="支付"/>
+	 <div class="pay_info">
+	 	 <h3>支付须知</h3>
+	 	 <p>
+	 	 	1.客户需要读一下，这个就是预订规则了，比如本地客户提前多久预订啊，预订提前多久不扣旅居币啊等等等等
+	 	 </p>
+	 	 <p>
+	 	 	2.客户需要读一下，这个就是预订规则了，比如本地客户提前多久预订啊，预订提前多久不扣旅居币啊等等等等
+	 	 </p>
+	 </div>
+	
+	<script>
+	 $(".has_hb_ok li").on("tap",function(){
+	 	var hb=$(this).find(".order_hb_zt")
+	 	if(hb.hasClass("hb_ok")){
+ 			hb.removeClass("hb_ok");
+	 	}else{
+	 		hb.addClass("hb_ok");
+	 	}
+	 	
+	 })
+	</script>
+</body>
+</html>

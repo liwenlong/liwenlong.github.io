@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单确认</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="title_top">
+	 	 <div class="back" title="返回上一页"></div>
+	 		确认订单
+	 </div>
+	  <div class="order_h">
+	 	 <div class="order_h_left">
+	 	 	<h3>房间名称</h3>
+	 	 	<p class="order_info2">房间号：7-2-1301</p>
+	 	 	<p class="order_info3">朝向  居室类型  平米  几张床</p>
+	 	 	<p class="order_info4"><img src="img/sel_1.gif" style="vertical-align: middle;" /> 海南省文昌县滨海大道2号</p>
+	 	 </div>
+	 	 <div class="order_h_r1">
+	 	 	<a href="">详情<img src="img/q2_link.png" alt="" style="width:.9rem;height:.9rem;"></a>
+	 	 </div>
+	 	 <div class="order_h_r2">
+	 	 	<p class="house_price"><span class="order_money">300</span><span class="money"> &nbsp;</span>/晚</p>
+	 	 </div>
+	 </div>
+	 <div class="order_people">
+	 	<p class="h3_title">入住人</p>
+	 	<ul class="person_list has_hb_ok">
+ 		<li>
+ 			<h3>
+ 				刘么么
+ 			</h3>
+ 			<p>身份证：<span>123444444455666</span></p>
+ 			<p>手&nbsp;机：<span>13988887777</span></p>
+ 			<div class="order_hb_zt " ></div>
+ 		</li>
+ 		
+ 		
+ 	</ul>
+	 	<div class="order_add_people">
+	 		 <img src="img/people_add.png" alt="">添加入住人
+	 	</div>
+	 </div>
+	 <div class="order_zf">
+	 	<p class="h3_title">
+	 		支付方式
+	 		<label class="oder_total_money">总计:&nbsp;<span class="order_money">1200</span><span class="money"> &nbsp;</span></label>
+	 	</p>
+	 	<ul class="order_list has_hb_ok">
+	 		<li>
+	 			<img src="" alt=""> <span>旅居币</span>
+	 			<div class="order_hb_zt " ></div>
+	 		</li>
+	 		
+	 	</ul>
+	 </div>
+	 <input type="button" id="zf" class="order_pay" value="支付"/>
+	
+	<script>
+	 $(".has_hb_ok li").on("tap",function(){
+	 	var hb=$(this).find(".order_hb_zt")
+	 	if(hb.hasClass("hb_ok")){
+ 			hb.removeClass("hb_ok");
+	 	}else{
+	 		hb.addClass("hb_ok");
+	 	}
+	 	
+	 })
+	</script>
+</body>
+</html>

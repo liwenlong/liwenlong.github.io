@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="title_top title_top_border">
+	 		提示
+	 </div>
+	  <div class="pay_ok_info">
+	  	<img src="img/pay_ok.png" alt="">
+		<h3>支付成功</h3>
+	  	<p>预订支付成功啦！</p>
+	  	<p>您的旅居管家稍后会给您致电~</p>
+	  </div>
+	  <div class="pay_link">
+	  	 <a href="#">查看订房信息</a>
+	  	  <a href="#">查看社区服务</a>
+	  	   <a href="#">查看本社区度假主题</a>
+	  </div>
+	
+	<script>
+	 $(".has_hb_ok li").on("tap",function(){
+	 	var hb=$(this).find(".order_hb_zt")
+	 	if(hb.hasClass("hb_ok")){
+ 			hb.removeClass("hb_ok");
+	 	}else{
+	 		hb.addClass("hb_ok");
+	 	}
+	 	
+	 })
+	</script>
+</body>
+</html>

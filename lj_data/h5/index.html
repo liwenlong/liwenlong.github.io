@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+	<title>欢迎来到东方旅居</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/can.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+<script>
+	//加载数据
+	 var curPage = 0;
+	 var glob_data={
+		 bigPic:{
+		 	list:[]
+		 },
+		 tj:{
+				"list":[]	
+		 }
+	 }
+
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+	    getAjaxDate();
+	</script>
+	<script id="bigPic_script" type="text/x-template">
+	 		<ul class="ui-slider-content" style="width: 300%">
+			   		 <li v-for="item in list">
+			   		 	<a href="{{item.url}}" data-som="ad">
+			   		 		<span style="background-image:url({{item.img_url}})"></span>
+			   		 	</a>
+			   		 </li>
+			 </ul>
+	</script>
+	<script id="list_script" type="text/x-template">
+	 		<div class="scroll_content" >
+					<ul class="list_sy">
+						<li class="list_right" v-for="item in list">
+				   		 	<a href="{{item.img_url}}">
+				   		 		<img src="{{item.img_url}}" />
+					        	<p class="list_title">{{item.title}}</p>
+					        	<p class="list_des">{{item.comment}}<label class="list_kb"></label><label class="list_money">￥{{item.price}} </label></p>
+				   		 	</a>
+				   		 </li>
+				        
+				    </ul>
+			</div>
+	</script>
+	<script id="house_script" type="text/x-template">
+		<li v-for="city in data">
+			<p>{{city.area_name}}</p>
+			<dl data-role="button">
+				<dd v-for="house in city.list" village_id="{{house.village_id}}">
+					{{house.name}}
+				</dd>
+			</dl>
+		</li>
+	</script>
+
+	<script id="room_script" type="text/x-template" >
+		<li data-role="button" v-for="room in data" house_type="{{room.house_type}}">{{room.name}}</li>
+	</script>
+<body>  
+     	<section>
+     		<div class="ui-slider" id="bigPic" v-bigPic="update" >
+			  
+			</div>
+			<div class="select_all">
+				<div class="select_box se_1" id="dialog_btn1">
+					<img src="img/sel_1.gif" class="select_img" /><span class="select_span">旅居目的地</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+					<div class="cander_data city_data">
+						三亚
+						</br>幸福小区
+					</div>
+					
+				</div>
+				<div class="select_box se_2" id="dialog_btn2">
+					<img src="img/sel_2.gif" class="select_img" /><span class="select_span">旅居时间</span>
+					<div class="cander_data">
+						2016-1-15
+						</br>入住8天
+					</div>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+				</div>
+				<div class="select_box se_3" id="dialog_btn3">
+					<img src="img/sel_3.gif" class="select_img" /><span class="select_span">房型</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+					<div class="cander_data house_data">
+						一居室
+					</div>
+				</div>
+				<div class="select_box se_4" id="search">
+					<img src="img/sel_4.gif" class="select_img" />
+					<span class="select_span">搜索</span>
+					<!-- <span><input type="text" value="旅居目的地"/></span> -->
+				</div>
+				
+			</div>
+		
+			<div id="scroller" class="sy_list" v-list="list">
+				
+			</div>
+			<div class="footer_face">
+				
+			</div>
+			
+     	</section>
+     	
+     <footer class="footer">
+		 <div class="footer_content">
+		 	<a href="#" class="footer_df active">
+				 <img src="img/footer_1.gif" />
+				 <span>订房</span>
+			</a>
+			<a href="#">
+				<img src="img/footer_2.gif" />
+				 <span>管家</span>
+			</a>
+			<a href="#">
+				<img src="img/footer_3.gif" />
+				 <span>交易</span>
+			</a>
+			</a>
+			<a href="#">
+				<img src="img/footer_4.gif" />
+				 <span>交流</span>
+			</a>
+			<a href="#">	
+				<img src="img/footer_5.gif" />
+				 <span>我的</span>
+			</a>
+		 </div>
+			
+			
+	</footer>
+	<!--选择日期等弹框-->
+     <div class="ui-dialog " id="ui-calendar">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">返回</label>
+				        <label class="cal_rz">选择旅居时间</label>
+				        <label class="cal_qr" data-role="button" id="getCalender">确定<label>
+				    </header>
+				    <div id="calendar"></div>
+				</div>
+		    </div>        
+	</div>
+	 <div class="ui-dialog " id="ui-house">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">取消</label>
+				        <label class="cal_rz">房型</label>
+				    </header>
+				    
+			    	<ul class="house_chose" id="room_name">
+			    		
+			    		
+			    	</ul>
+				    
+				</div>
+		    </div>        
+	</div>	
+	<div class="ui-dialog " id="ui-city">
+		    <div class="ui-dialog-cnt">
+		    	<!-- <button type="button" data-role="button"  class="select" id="">关闭</button>  -->
+		    	<div id="calendarArea" >
+				    <header class="cal_header">
+				        <label class="cal_qk" data-role="button">取消</label>
+				        <label class="cal_rz">旅居地/景区</label>
+				    </header>
+				    
+			    	<div class="select_city">
+			    		<div class="city_top">
+			    			<span class="city_search_icon">
+			    				<img src="img/city_1.gif" />
+			    			</span>
+			    			<span class="city_input">
+			    				<input type="text"  value="请输入城市或小区" />
+			    				<!-- <lable>请输入城市或小区</lable> -->
+			    			</span>
+			    			<span class="city_qx">
+			    				<img src="img/city_2.gif" />
+			    			</span>
+
+			    		</div>
+			    		<ul class="city_list_fist" id="house_name">
+			    			
+
+			    			
+			    			<!-- <li>
+			    				<p>青岛</p>
+			    				<dl data-role="button">
+			    					<dd>海洋城小区</dd>
+			    					<dd>沿海小区</dd>
+									<dd>福利小区</dd>
+			    				</dl>
+			    			</li>
+			    			<li>
+			    				<p>三门峡</p>
+			    				<dl data-role="button">
+			    					<dd>三门峡小区</dd>
+			    					<dd>啥地方小区</dd>
+									<dd>阿士小区</dd>
+			    				</dl>
+			    			</li> -->
+			    		</ul>
+			    	</div>
+				    
+				</div>
+		    </div>        
+	</div>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="js/can.js"></script>
+	<script type="text/javascript" src="js/dropload.js"></script>
+	
+</body>
+</html>
