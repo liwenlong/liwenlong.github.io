@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付</title>
+	<meta name="viewport" content="width=depW/320*20vice-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	 <div class="login_warp">
+	 	<div class="login_bg">
+	 	</div>
+	 	
+	 	<div class="login_con">
+	 		 <div class=" back login_back" title="返回上一页"><</div>
+			 <h3 class="clear"></h3>
+			 <img src="img/login_logo.png" alt="" class="login_logo" />
+			 <div class="login_form">
+			 	<form action="" id="SignupForm">
+			 		<ul>
+			 			<li>
+			 				<label for=""><img src="img/login_ico_phone.png" alt="" class="login_icon">|</label>
+			 				<input type="text" value="手机号" name="mobile"/>
+			 				
+			 			</li>
+			 			
+			 			<li>
+			 				<label for=""><img src="img/login_ico_password.png" alt="" class="login_icon">|</label>
+			 				<input type="password" value="" name="password"/>
+			 			</li>
+			 			<li class="login_btn" id="login">
+			 				 登录
+			 			</li>
+			 			
+			 		</ul>
+			 		<a href="#" class="login_forget">
+			 			忘记密码？
+			 		</a>
+			 		<p class="login_gologin">
+			 			用户注册
+			 		</p>
+						
+			 	</form>
+			 </div>
+			
+	 	</div>
+	 </div>
+	 <script type="text/javascript">
+	    $(function(){
+	    	var  fullHeiht = $(window).height();
+	    	$(".login_bg").height(fullHeiht);
+
+	    	//登录
+	    	$("#login").on("tap",function(){
+	    		$.post('http://ljdf.dotalk.cn/api-cgi-user/login',
+		          $('#SignupForm').serialize(),
+		          function(response){
+		       	    console.log(response);
+		        })
+	    	})
+	    	
+	    })
+	 </script>
+</body>
+</html>

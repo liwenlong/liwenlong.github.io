@@ -31,6 +31,10 @@ $(function(){
 	$(".back").on("tap",function(){
 		window.history.back()
 	})
+	//input的值初始化为记忆值
+	$("input").one("tap",function(){
+		$(this).val("");
+	})
 
 })
 

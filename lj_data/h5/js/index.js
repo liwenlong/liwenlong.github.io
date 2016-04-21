@@ -315,7 +315,7 @@ $(function(){
 		 $(".se_4 ").attr("end_day",dataArr[1]);
 	})
 	$(".se_4").tap(function(){
-		var search_url = "http://ljdf.dotalk.cn/api-cgi-product/list"
+		var search_url = "search_list.html"
 		//house_area_id=102&start_day=3_12&end_day=3_18 
 		//house_type 
 		var house_area_id = $(this).attr("house_area_id");
@@ -324,7 +324,7 @@ $(function(){
 		var house_type =$(this).attr("house_type");
 		var getSearchUrl = search_url+"?house_area_id="+house_area_id+"&"+"start_day="+start_day
 		   +"&"+"end_day="+end_day+"&"+"house_type="+house_type;
-		 console.log(getSearchUrl);
+		window.location.href=getSearchUrl; 
 	})
 
 })

@@ -12,690 +12,653 @@
 	<script type="text/javascript" src="js/iscroll.js"></script>
 	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/can.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script src="js/common.js"></script>
+	<script></script>
 </head>
 <body>
+	<div id="search">
+		
+
+	</div>
+	<script id="search_script" type="text/x-template">
+
+	
 	 <div class="sLi_top">
 	 	 <div class="sLi_back" title="退后"></div>
-	 	 <p>月亮湾小区<p>
+	 	 <p>{{house_info.house_tel}}<p>
 	 	 <div class="sLi_location"></div>
 	 </div>
 	 <div class="sLi_slider">
 	 		<div class="ui-slider">
 			    <ul class="ui-slider-content" style="width: 300%">
-			    	<li><span style="background-image:url(img/slider_1.jpg)"></span></li>
-			        <li class="current"><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTM2MzI4MTA4MCw0MjcwMDE0NjkA+n8)"></span></li>
-			        <li><span style="background-image:url(http://f.hiphotos.baidu.com/image/h%3D200/sign=d9c2d17b1a950a7b6a3549c43ad0625c/14ce36d3d539b600af3985faee50352ac75cb78c.jpg)"></span></li>
-			        <li><span style="background-image:url(http://gtb.baidu.com/HttpService/get?p=dHlwZT1pbWFnZS9qcGVnJm49dmlzJnQ9YWRpbWcmYz10YjppZyZyPTcyNDUzNjA2OSwzMDIyMzI2NDky)"></span></li>
+
+			    	<li v-for="slider in house_info.banner_image"><span style="background-image:url({{slider}})"></span></li>
 
 			    </ul>
 			</div>
 	 </div>
-	 <div id="sLi_Q1">
+   
+	<div id="sLi_Q1" v-if="flag==1">
 	 	<div class="sLi_tab">
-	 	<div class="sLi_tab_title_wrap">
-	 		 <div class="sLi_tab_title has_con" id="clander_tab">
-		 		3.1-3.8
+		 	<div class="sLi_tab_title_wrap">
+		 		 <div class="sLi_tab_title has_con" id="clander_tab" >
+			 		3.1-3.8
+			 	</div>
+
+		 		<div class="sLi_tab_title sLi_tab_price begin_search">
+		 			价格
+		 			<span>&nbsp;</span>
+		 		</div>
+		 		<div class="sLi_tab_title has_con">
+		 			<span>全部户型</span>
+		 			<div class="sLi_tab_title tab_con tab_change" style="display:none;">
+		 				<ul>
+		 					<li class="begin_search house_type" v-for="house_type in select.select_house_type" type-id="{{house_type.type_id}}">{{house_type.name}}</li>
+		 				</ul>
+		 			</div>
+		 		</div>
+		 		<div class="sLi_tab_title has_con">
+		 			<span>全部楼层</span>
+		 			<div class="tab_con tab_change" style="display:none;">
+		 				<ul>
+		 					<li class="begin_search house_floor" v-for="house_floor in select.select_house_floor" >	{{house_floor}}</li>
+		 				</ul>
+		 			</div>
+		 		</div>
 		 	</div>
+		 	<div class="sLi_tab_bg" style="display:none;">
+		 		&nbsp;
+		 	</div>
+	    </div>
 
-	 		<div class="sLi_tab_title sLi_tab_price">
-	 			价格
-	 			<span>&nbsp;</span>
-	 		</div>
-	 		<div class="sLi_tab_title has_con">
-	 			<span>全部户型</span>
-	 			<div class="sLi_tab_title tab_con tab_change" style="display:none;">
-	 				<ul>
-	 					<li>一居室</li>
-	 					<li>两居室</li>
-	 					<li>三居室</li>
-	 					<li>四居室</li>
-	 					<li>别墅</li>
-	 				</ul>
-	 			</div>
-	 		</div>
-	 		<div class="sLi_tab_title has_con">
-	 			<span>全部楼层</span>
-	 			<div class="tab_con tab_change" style="display:none;">
-	 				<ul>
-	 					<li>1层</li>
-	 					<li>2层</li>
-	 					<li>3层</li>
-	 					<li>4层</li>
-	 					<li>6层</li>
-	 					<li>7层</li>
-	 					<li>8层</li>
-	 					<li>4层</li>
-	 					<li>11层</li>
-	 					<li>12层</li>
-	 					<li>13层</li>
-	 					<li>14层</li>
-	 					<li>11层</li>
-	 					<li>12层</li>
-	 					<li>31层</li>
-	 					<li>14层</li>
-	 				</ul>
-	 			</div>
-	 		</div>
-	 	</div>
-	 	<div class="sLi_tab_bg" style="display:none;">
-	 		&nbsp;
-	 	</div>
-	 </div>
+		 <div class="sli_p">
+		 	 <div class="sli_scroll_wrap" id="scroll_02">
+		 	 	<div class="sli_scroll">
+		 	 	  <ul class="sli_p_u1">
+			 	 	<li class="des">楼号</li>
+			 	 	<li class="num  begin_search" v-for="house_num in select.select_house_num" >{{house_num}}</li>
+			 	  </ul>
+		 	 	</div>
+		 	 </div>
+		 </div>
+		 <div class="sli_p">
+		 	 <div class="sli_scroll_wrap" id="scroll_03">
+		 	 	<div class="sli_scroll">
+		 	 	  <ul class="sli_p_u1">
+			 	 	<li class="des">朝向</li>
+			 	 	<li class="cx on">全部</li>
+			 	 	<li class="cx begin_search" v-for="house_position in select.select_house_position" >{{house_position}}</li>
+			 	 	
+			 	  </ul>
+		 	 	</div>
+		 	 </div>
+		 </div>
+		 <div class="sLi_xfj">
+		 	选房间
+		 </div>
+		 <div class="sLi_con_house">
+		 	 <div class="house_list list_s1">
+		 	 	 <div class="house_list_s1_con">
+		 	 	 	<ul class="">
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 </ul>
+		 	 	 </div>
+		 	 </div>
+		 	 <div class="house_list list_s1">
+		 	 	 <div class="house_list_s1_con">
+		 	 	 	<ul class="">
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 </ul>
+		 	 	 </div>
+		 	 </div>
+		 	 <div class="house_list list_s1">
+		 	 	 <div class="house_list_s1_con">
+		 	 	 	<ul class="">
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 	<li>
+				 	 		<a href="#">
+				 	 			<h3>一居</h3>
+				 	 			<p>1单元</br>
+				 	 			5层02
+				 	 			</p>
+				 	 			
+				 	 			<label class="money">
+				 	 				400
+				 	 			</label>
+				 	 		</a>
+				 	 	</li>
+				 	 </ul>
+		 	 	 </div>
+		 	 </div>
 
-	 <div class="sli_p">
-	 	 <div class="sli_scroll_wrap" id="scroll_02">
-	 	 	<div class="sli_scroll">
-	 	 	  <ul class="sli_p_u1">
-		 	 	<li class="des">楼号</li>
-		 	 	<li class="num ">2</li>
-		 	 	<li class="num on">3</li>
-		 	 	<li class="num">4</li>
-		 	 	<li class="num">5</li>
-		 	 	<li class="num">6</li>
-		 	 	<li class="num">2</li>
-		 	 	<li class="num">3</li>
-		 	 	<li class="num">4</li>
-		 	 	<li class="num">5</li>
-		 	 	<li class="num">6</li>
-		 	 	<li class="num">3</li>
-		 	 	<li class="num">4</li>
-		 	 	<li class="num">5</li>
-		 	 	<li class="num">6</li>
-		 	 	<li class="num">3</li>
-		 	 	<li class="num">4</li>
-		 	 	<li class="num">5</li>
-		 	 	<li class="num">6</li>
-		 	 	<li class="num">3</li>
-		 	 	<li class="num">4</li>
-		 	 	<li class="num">5</li>
-		 	 	<li class="num">6</li>
-		 	  </ul>
-	 	 	</div>
-	 	 </div>
-	 </div>
-	 <div class="sli_p">
-	 	 <div class="sli_scroll_wrap" id="scroll_03">
-	 	 	<div class="sli_scroll">
-	 	 	  <ul class="sli_p_u1">
-		 	 	<li class="des">朝向</li>
-		 	 	<li class="cx on">全部</li>
-		 	 	<li class="cx">南</li>
-		 	 	<li class="cx">北</li>
-		 	 	<li class="cx">西</li>
-		 	 	<li class="cx">东</li>
-		 	 	<li class="cx">西</li>
-		 	 	<li class="cx">东</li>
-		 	 	<li class="cx">西</li>
-		 	 	<li class="cx">东</li>
-		 	  </ul>
-	 	 	</div>
-	 	 </div>
-	 </div>
-	 <div class="sLi_xfj">
-	 	选房间
-	 </div>
-	 <div class="sLi_con_house">
-	 	 <div class="house_list list_s1">
-	 	 	 <div class="house_list_s1_con">
-	 	 	 	<ul class="">
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 </ul>
-	 	 	 </div>
-	 	 </div>
-	 	 <div class="house_list list_s1">
-	 	 	 <div class="house_list_s1_con">
-	 	 	 	<ul class="">
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 </ul>
-	 	 	 </div>
-	 	 </div>
-	 	 <div class="house_list list_s1">
-	 	 	 <div class="house_list_s1_con">
-	 	 	 	<ul class="">
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 	<li>
-			 	 		<a href="#">
-			 	 			<h3>一居</h3>
-			 	 			<p>1单元</br>
-			 	 			5层02
-			 	 			</p>
-			 	 			
-			 	 			<label class="money">
-			 	 				400
-			 	 			</label>
-			 	 		</a>
-			 	 	</li>
-			 	 </ul>
-	 	 	 </div>
-	 	 </div>
-
-	 </div>	
-	 </div>
+		 </div>	
+	</div>
 	 
 	 
 	 <div class="sLi_des">
@@ -703,11 +666,10 @@
 		 	旅居地描述
 		 </div>
 	 	<div class="sLi_con">
-	 		<p>房主是位热情好客大方高素质的女仕刚出来打工时租床铺住住过顶层楼梯上方搭的阁楼， 来北京时，住过半地下室大杂院合租...后来一点积累买了自己的房子。</p>
-			<p>喜欢干干净净整整洁洁，家中养着大盆幸福树，兰花 绿萝 吊兰等等，希望你也是热爱生活，享受生活和旅游，爱清洁的人士。</p>
+	 		{{house_info.desc}}
 	 	</div>
 
-	 	<div class="sLi_phone"> </div>
+	 	<div class="sLi_phone" title="{{house_info.house_tel}}"> </div>
 	 </div>
 	 <h3 style="clear:both"></h3>
 	 <div class="sLi_maps">
@@ -727,15 +689,53 @@
 				    <header class="cal_header">
 				        <label class="cal_qk" data-role="button">返回</label>
 				        <label class="cal_rz">选择旅居时间</label>
-				        <label class="cal_qr" data-role="button" id="getCalender">确定<label>
+				        <label class="cal_qr begin_search" data-role="button" id="getCalender">确定<label>
 				    </header>
 				    <div id="calendar"></div>
 				</div>
 		    </div>        
 	</div>
-
+	</script>
+	<script>
+		window.urlObj = GetRequest();
+		function loadDate(){
+			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
+			urlObj["_from"]="pc";
+			var url = "http://ljdf.dotalk.cn/api-cgi-product/list";
+			 $.ajax({
+			 	url:url,
+			 	dataType:'jsonp',
+			 	data:urlObj,
+			 	timeout:1000,
+			 	success:function(data){
+			 		if(data.code!==0){
+			 			alert("网络异常")
+			 		}else{
+			 			console.log(data);
+			 			sethtml(data.data);
+			 		}
+			 	}
+			})
+		}
+		function sethtml(data){
+			window.house_vm  = new Vue({
+					el:"#search",
+					data:data,
+					replace: false,
+					template:$("#search_script").html()
+					
+			}) 
+			setTimeout(function(){
+				dh();
+			},1000)
+			
+		}
+		loadDate();
+	</script>>
 	 <script>
-	 $(function(){
+	 function dh(){
+	 	//页面的所有动画效果
+	 	 $(function(){
 			setZoom();
 			setSllider();
 			// setScroll();
@@ -805,20 +805,20 @@
                             }
                         }
              });
-			 $("#clander_tab").tap(function(){
+			$("#clander_tab").tap(function(){
 			 	var _this = $(this);
 				var offsetY =$(this).offset().top;
 				window.scrollTo(0,offsetY-10);
 			   	window.scrollTo(0,offsetY-10);
 			    var dia2=$("#ui-calendar").dialog("show");
-
 			     $("#getCalender").tap(function(){
 				    var data = window.cander._getSelectedDate();
 				  	var begin =data[0].slice(5).replace("-",".");
 				  	var end =data[1].slice(5).replace("-",".")
 				    _this.html(begin+"-"+end);
 				    $(_this).removeClass("has_con_select");
-				   
+				    urlObj["start_day"] =begin;
+				    urlObj["end_day"] =end;
 			 	})
 			   
 			})
@@ -828,13 +828,52 @@
 			$(".sLi_tab_price").on("tap",function(){
 				var icon = $(this).find("span")
 				if(icon.hasClass("up")){
+					urlObj["price"] ="desc";
 					icon.removeClass("up");
 				}else{
+					urlObj["price"] ="asc";
 					icon.addClass("up");
 				}
 			})
-	        
-	 })
+			$(".house_floor").on("tap",function(){
+				var floor = $(this).html();
+				urlObj["house_floor"] =floor;
+			})
+			$(".house_type").on("tap",function(){
+				var house_type = $(this).attr("type-id");
+				urlObj["house_type"] =house_type;
+			})
+			$(".house_type")
+	        $("li.num").on("tap",function(){
+	        	urlObj["house_num"] = $(this).html();
+	        });
+	        $("li.cx").on("tap",function(){
+	        	var html = $(this).html();
+	        	if(html == "全部"){
+	        		urlObj["house_position"] =null;
+	        		delete urlObj.house_position;
+	        	}else{
+	        		urlObj["house_position"] =html;
+	        	}
+	        })
+	        // //朝向
+	        // $("li.cx");
+
+	        getNewSearch();
+
+	    })
+	 }
+	 function getNewSearch(){
+	 	$(".begin_search").on("tap",function(){
+	 		//触发search属性
+	 		setTimeout(function(){
+	 			console.log("begin to search");
+	 		},200)
+	 		//1、收集要查询的属性
+	 		loadDate();
+	 		//2、拼接url，查询
+	 	})
+	 }
 
 	 function setscroll(dom){
 	 	 dom.each(function(index){
@@ -883,7 +922,7 @@
 		        // curPage 当前页
 		    });
 
-		}
+	}
 
 	 </script>
 </body>
