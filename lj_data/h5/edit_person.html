@@ -8,39 +8,78 @@
 	<link rel="stylesheet" href="css/order.css">
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/frozen.js"></script>
-	<script type="text/javascript" src="js/iscroll.js"></script>
+	
 	<script src="js/common.js"></script>
 </head>
 <body>
 	 <div class="title_top">
 	 	 <div class="back" title="返回上一页"></div>
 	 		编辑入住人
-	 	 <div class="a_right">删除</div>
+	 	 <div class="a_right" id="del_person">删除</div>
 	 </div>
-	<div class="person_add">
+	 <form action="" id="edit_person">
+	 	<div class="person_add">
+		<input type="hidden" name="user_id" value="123" />
 		<ul class="person_input_list">
 	 		<li>
 	 			<span>真实姓名:</span>
-	 			<input type="text" value="齐波" class="add_person_input" />
+	 			<input type="text" value="齐波" class="add_person_input"  name="people_name"/>
 	 		</li>
 	 		<li>
 	 			<span>身 份 证:</span>
-	 			<input type="text" value="1444555556666" class="add_person_input"/>
+	 			<input type="text" value="1444555556666" class="add_person_input" name="identity"/>
 	 		</li>
 	 		<li>
 	 			<span>手&nbsp;&nbsp;机:</span>
-	 			<input type="text" value="15933322222" class="add_person_input"/>
+	 			<input type="text" value="15933322222" class="add_person_input" name="mobile"/>
 	 		</li>
 	 		
 	 	</ul>
-	 	<a class="person_add_confi" herf="#">
+	 	<a class="person_add_confi" herf="#" id="edit_btn">
 	 		确定
 	 	</a>
 	</div>
+
+	 </form>
+	
  	
 	
-	<script>
-	 
-	</script>
+	 <script type="text/javascript">
+	    $(function(){
+	    	//登录
+	    	$("#edit_btn").on("tap",function(){
+	    		$.post('http://ljdf.dotalk.cn/api-cgi-user/addpeople',
+		          $('#edit_person').serialize(),
+		          function(response){
+		       	    console.log(response);
+		        })
+		        alert("编辑成功~");
+		        window.location.href="order.html"; 
+	    	})
+	    	$("#del_person").on("tap",function(){
+	    		var user_id = $("[name=user_id]").val();
+	    		var delUrl = "http://ljdf.dotalk.cn/api-cgi-user/delpeople"
+	    		$.ajax({
+				 	url:delUrl,
+				 	dataType:'jsonp',
+				 	data:{
+				 		"_from":"pc",
+				 		id:user_id
+				 	},
+				 	timeout:1000,
+				 	success:function(data){
+				 		// if(data.code!==0){
+				 		// 	alert("网络异常")
+				 		// }else{
+				 		// 	alert("删除成功");
+				 		// }
+				 		alert("删除成功~");
+				 		  window.location.href="order.html"; 
+				 	}
+				})
+	    	})
+	    	
+	    })
+	 </script>
 </body>
 </html>

@@ -659,7 +659,40 @@
 
 		 </div>	
 	</div>
-	 
+	<div id="sLi_Q2" v-if="flag==2">
+	 	<div class="sli_q2">
+			<div class="q2_title">
+				<p>提示</p>由于同一间房无法满足您的入住需求，我们已经精心为您选出，适合您居住的方案
+			</div>
+			<div class="q2_content">
+				<div class="q2_list" v-for="results in room_list_matching">
+				    <div  :class="{q2_list_con_2:results.length==2,q2_list_con_3:results.length==3}">
+
+					    <div v-for="rooms in results"  :class="[q2_block,{q2_block_hc:$index>0}]">
+							<div class="q2_left">
+								<span>{{rooms.day}}晚</span>
+							</div>
+							<div class="q2_right">
+							   <a href="house.html?room_id={{rooms.room_id}}" >
+				 	 			 <h3>{{rooms.house_type}}</h3>
+				 	 			 <p>{{rooms.house_unit}}</br>
+				 	 			 {{rooms.house_floor}}{{rooms.room_num}}
+				 	 			 </p>
+				 	 			 <label class="money">
+				 	 				{{rooms.price}}
+				 	 			 </label>
+				 	 			</a>
+							</div>
+						</div>
+						
+					</div>
+					
+					<a class="q2_list_link" href="order.html">&nbsp;</a>
+				</div>
+				
+			</div>
+	 	</div>
+	 </div>
 	 
 	 <div class="sLi_des">
 	 	<div class="sLi_xfj">

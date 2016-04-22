@@ -8,39 +8,42 @@
 	<link rel="stylesheet" href="css/me.css">
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body>
-	<div class="me_warp bg_grey">
+	<div id="wrap"></div>
+	<script id="me_script" type="text/x-template">
+	  <div class="me_warp bg_grey">
 		<div class="me_i_top">
 			<img src="img/5_02.jpg" alt="" class="me_i_top_bimg" />
 			<div class="me_i_top_content">
-				<a class="me_i_top_sz" herf="http://www.baidu.com">
+				<a class="me_i_top_sz" href="me_conf.html">
 					<img src="img/me_sz.png" alt="" class="me_i_top_sz">
 				</a>
-				<img class="me_i_top_tx"  src="img/people.jpg"/>
+				<img class="me_i_top_tx"  src="{{header_img}}"/>
 					
 				
 				<a class="i_top_pen" href="#">
-					<span>法雷</span><img src="img/me_edite.png" alt="" style="height:100%" />
+					<span>{{user_name}}</span><img src="img/me_edite.png" alt="" style="height:100%" />
 					
 				</a>
 				<div class="i_top_ownerplace">
 					<ul>
-						<li>拥有旅居地：山东烟台 海阳碧桂园 22-1-1209</li>
+						<li>拥有旅居地：<span v-for="name in address">{{name}}&nbsp;&nbsp;</span></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="me_i_money">
 			<p>资产</p>
-			<p class="money_green">1000</p>
-			<p>旅居币<img src="img/me_money.png" alt=""></p>
+			<p class="money_green">{{price}}</p>
+			<p>旅居币<span class="money">&nbsp;&nbsp;</span></p>
 		</div>
 		<div class="me_i_list">
 			 <ul class="list">
 			 	<li>
-			 		<a href="">
+			 		<a href="me_order_list.html">
 			 			<span>
 			 				<img src="img/list_house.png" alt="" style="width:.9rem;height:.9rem;">订房单
 			 			</span>
@@ -56,7 +59,7 @@
 			 		</a>
 			 	</li>
 			 	<li>
-			 		<a href="">
+			 		<a href="me_info.html">
 			 			<span>
 			 				<img src="img/list_mine.png" alt="" style="width:.9rem;height:.9rem;">我的资料
 			 			</span>
@@ -64,7 +67,7 @@
 			 		</a>
 			 	</li>
 			 	<li>
-			 		<a href="">
+			 		<a href="me_about.html">
 			 			<span>
 			 				<img src="img/list_about.png" alt="" style="width:.9rem;height:.9rem;">关于旅居东方
 			 			</span>
@@ -79,7 +82,7 @@
 		<div class="footer_face"></div>
 		<footer class="footer foot_border">
 			 <div class="footer_content">
-			 	<a href="#" class="footer_df ">
+			 	<a href="index.html" class="footer_df ">
 					 <img src="img/footer_10.gif" />
 					 <span>订房</span>
 				</a>
@@ -96,7 +99,7 @@
 					<img src="img/footer_4.gif" />
 					 <span>交流</span>
 				</a>
-				<a href="#" class="footer_df active" >	
+				<a href="##" class="footer_df active" >	
 					
 					<img src="img/footer_51.gif" />
 					 <span>我的</span>
@@ -105,9 +108,41 @@
 				
 				
 		</footer>
-	</div>
-	
-	
+	  </div>
+	</script>
+	<script>
+		function loadDate(){
+			var  urlObj = GetRequest();
+			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
+			var url = "http://ljdf.dotalk.cn/api-cgi-user/index";
+			
+			 $.ajax({
+			 	url:url,
+			 	dataType:'jsonp',
+			 	data:{
+			 		"_from":"pc",
+			 	},
+			 	timeout:1000,
+			 	success:function(data){
+			 		if(data.code!==0){
+			 			alert("网络异常")
+			 		}else{
+			 			sethtml(data.data);
+			 		}
+			 	}
+			})
+		}
+		function sethtml(data){
+			window.me_vm  = new Vue({
+					el:"#wrap",
+					data:data,
+					replace: false,
+					template:$("#me_script").html()
+			}) 
+			
+		}
+		loadDate();
+	</script>
 	
 </body>
 </html>

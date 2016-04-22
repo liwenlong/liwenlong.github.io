@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单确认</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/order.css">
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	
+	<script src="js/common.js"></script>
+	<script id="order_script" type="text/x-template">
+		<div class="title_top">
+		 	 <div class="back" title="返回上一页"></div>
+		 		确认订单_{{order_id}}
+		     </div>
+		     <div class="order_h">
+		 	 <div class="order_h_left">
+		 	 	<h3>{{cell_name}}</h3>
+		 	 	<p class="order_info2">房间号：{{room_number}}</p>
+		 	 	<p class="order_info3">{{info}}</p>
+		 	 	<p class="order_info4"><img src="img/sel_1.gif" style="vertical-align: middle;" /> {{address}}</p>
+		 	 </div>
+		 	 <div class="order_h_r1">
+		 	 	<a href="house.html?room_id=1009">详情<img src="img/q2_link.png" alt="" style="width:.9rem;height:.9rem;"></a>
+		 	 </div>
+		 	 <div class="order_h_r2">
+		 	 	<p class="house_price"><span class="order_money">{{house_price}}</span><span class="money"> &nbsp;</span>/晚</p>
+		 	 </div>
+		 </div>
+		 <div class="order_people">
+			 	<p class="h3_title">入住人</p>
+			 	<ul class="person_list has_hb_ok">
+			 		<li v-for="person in user_info">
+			 		   <a href="edit_person.html?user_id=123" >
+			 		   		<h3>
+			 					{{person.people_name}}
+				 			</h3>
+				 			<p>身份证：<span>{{person.identity}}</span></p>
+				 			<p>手&nbsp;机：<span>{{person.mobile}}</span></p>
+			 		   </a>
+			 			
+			 			<div class="order_hb_zt " ></div>
+			 		</li>
+			 		
+			 		
+			 	</ul>
+			 	<div class="order_add_people">
+			 		<a href="add_person.html"><img src="img/people_add.png" alt="">添加入住人</a> 
+			 	</div>
+		 </div>
+		 <div class="order_zf">
+			 	<p class="h3_title">
+			 		支付方式
+			 		<label class="oder_total_money">总计:&nbsp;<span class="order_money">{{order_price}}</span><span class="money"> &nbsp;</span></label>
+			 	</p>
+			 	<ul class="order_list has_hb_ok">
+			 		<li>
+			 			<img src="" alt=""> <span>旅居币</span>
+			 			<div class="order_hb_zt " ></div>
+			 		</li>
+			 		
+			 	</ul>
+		 </div>
+		 
+
+		  <input type="button" id="zf" class="order_pay" value="立即支付"/>
+	 	 <input type="button" id="qx" class="order_pay order_qx" value="取消订单"/>
+	</script>
+</head>
+<body>
+	 
+	 <div id="order">
+	 	
+	 </div>
+	 
+	<script>
+		function loadDate(){
+			var  urlObj = GetRequest();
+			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
+			var url = "http://ljdf.dotalk.cn/api-cgi-order/setorder";
+			 $.ajax({
+			 	url:url,
+			 	dataType:'jsonp',
+			 	data:{
+			 		"_from":"pc",
+			 	},
+			 	timeout:1000,
+			 	success:function(data){
+			 		if(data.code!==0){
+			 			alert("网络异常")
+			 		}else{
+			 			sethtml(data.data);
+			 		}
+			 	}
+			})
+		}
+		function sethtml(data){
+			window.order_vm  = new Vue({
+					el:"#order",
+					data:data,
+					replace: false,
+					template:$("#order_script").html()
+			}) 
+			setTimeout(function(){
+			  init_dh();	
+			})
+		}
+		loadDate();
+	</script>
+
+	<script type="text/javascript" src="js/frozen.js"></script>
+	<script>
+	function init_dh(){
+		$(".has_hb_ok li").on("tap",function(){
+		 	var hb=$(this).find(".order_hb_zt")
+		 	if(hb.hasClass("hb_ok")){
+	 			hb.removeClass("hb_ok");
+		 	}else{
+		 		hb.addClass("hb_ok");
+		 	}
+		 	
+		 })
+		$("#zf").on("tap",function(){
+			//pers on_list  hb_ok
+			// 判断入住人是否选择
+			 var perple = $(".person_list ").find(".hb_ok");
+			 if(!perple.length){
+			 	alert("请选择入住人");
+			 	return;
+			 }
+			 var zfb = $(".order_list").find(".hb_ok");
+			if(!zfb.length){
+			 	alert("请选择支付货币");
+			 	return;
+			 }
+			 //页面跳转到支付
+			 window.location.href="pay.html"; 
+			
+		})
+	}
+	 
+	</script>
+</body>
+</html>

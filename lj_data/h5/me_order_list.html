@@ -8,30 +8,34 @@
 	<link rel="stylesheet" href="css/me.css">
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/frozen.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
 	<script src="js/common.js"></script>
+
 </head>
 <body>
+	<div id="wrap"></div>
+	<script id="list_script" type="text/x-template">
 	<div class="me_warp ">
 		<div class="title_top title_bottom">
 	 	 	<div class="back" title="旅居币"></div>
 	 		订单房
 	 	</div>
 	 	<div class="me_order bg_grey">
-	 		<a href="" class="me_order_block">
+	 		<a href="me_order_config.html" class="me_order_block" v-for="list in data">
 	 			<div class="mob_left">
 	 				<div class="mob_title">
-	 					订单号：<span class="c_green">2015111111</span>
-	 					<span class="mob_text_right">2016-3-1 </span>
+	 					订单号：<span class="c_green">{{list.order_id}}</span>
+	 					<span class="mob_text_right">{{list.order_date}} </span>
 	 				</div>
 	 				<div class="mob_qx">
-	 					<h3>小区名字-月亮湾 </h3>
-	 					<p>朝南  1室 1卫 88㎡ 1张床</p>
-	 					<p>3月1日 — 3月8日  共7晚</p>
-	 					<div class="mob_qx_right zf1">已支付</div>
+	 					<h3>{{list.cell_name}} </h3>
+	 					<p>{{list.info}}</p>
+	 					<p>{{list.start_time}} — {{list.end_time}}  共{{list.day}}晚</p>
+	 					<div class="mob_qx_right zf{{list.order_sta}}">{{list.order_state}}</div>
 	 				</div>
 	 			</div>
 	 			<div class="mob_right">
-	 					<img src="img/zf_1.png" alt="">
+	 					<img src="img/zf_{{list.order_sta}}.png" alt="">
 	 			</div>
 	 		</a>
 	 		<a href="" class="me_order_block">
@@ -122,6 +126,40 @@
 	 	</div>
 		
 	</div>
+   </script>
+	<script>
+		function loadDate(){
+			var  urlObj = GetRequest();
+			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
+			var url = "http://ljdf.dotalk.cn/api-cgi-order/orderlist";
+			
+			 $.ajax({
+			 	url:url,
+			 	dataType:'jsonp',
+			 	data:{
+			 		"_from":"pc",
+			 	},
+			 	timeout:1000,
+			 	success:function(data){
+			 		if(data.code!==0){
+			 			alert("网络异常")
+			 		}else{
+			 			sethtml(data);
+			 		}
+			 	}
+			})
+		}
+		function sethtml(data){
+			window.me_vm  = new Vue({
+					el:"#wrap",
+					data:data,
+					replace: false,
+					template:$("#list_script").html()
+			}) 
+			
+		}
+		loadDate();
+	</script>
 	
 	
 	

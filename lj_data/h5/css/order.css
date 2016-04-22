@@ -7,7 +7,7 @@
 	vertical-align: middle;
 }
 .order_h_left{
-	max-width: 12rem;
+	max-width: 11rem;
 
 }
 .order_h_left h3{
@@ -27,12 +27,15 @@
 	width: 3rem;
 	top:1rem;
 	text-align: right;
-
+	color: #70c858;
+}
+.order_h_r1 a{
+	color: #70c858;
 }
 .order_h_r2{
 	position: absolute;
 	right: 0;
-	width: 4rem;
+	width: 5rem;
 	bottom: 1rem;
 	text-align: right;
 }
@@ -47,6 +50,10 @@
 	border-radius: .3rem;
 	text-align: center;
 	line-height: 2rem;
+	color: #2c393f;
+}
+.order_add_people a{
+	color: #2c393f;
 }
 .order_add_people img{
 	vertical-align: middle;
@@ -396,6 +403,9 @@
 	text-align: center;
 	background: rgba(255,255,255,.8);
 	margin: 1rem auto;
+}
+.login_gologin a{
+	color: green;
 }
 
 

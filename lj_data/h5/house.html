@@ -36,7 +36,7 @@
 		 	 </div>
 		 	 <div class="house_right">
 		 	 	<p class="house_price"><span class="house_money">{{price}}</span><span class="money">&nbsp;&nbsp;</span>/{{unit}}</p>
-		 	 	<a href="" class="house_order">预定</a>
+		 	 	<a href="#" class="house_order" id="house_yd">预定</a>
 		 	 </div>
 		 </div>
 		 <div class="house_ss">
@@ -141,7 +141,7 @@
 					template:$("#house").html()
 			}) 
 			setTimeout(function(){
-			  setSllider();	
+			  init_dh();	
 			})
 		}
 		loadDate();
@@ -151,6 +151,19 @@
 	<script type="text/javascript" src="js/iscroll.js"></script>
 	
 	 <script>
+	 function init_dh(){
+		setSllider();
+		$("#house_yd").on("tap",function(){
+			var a = Math.random();
+			console.log(a);
+			// if(a< 0.5){
+				window.location.href="pay.html"; 
+			// }else{
+			// 	window.location.href="login.html"; 
+			// }
+		})
+
+	 }
 	  function setSllider(){
 		    /* fz 即 FrozenJS 的意思 */
 		    var slider = new fz.Scroll('.ui-slider', {
@@ -169,6 +182,7 @@
 		    });
 
 		}
+
 	 </script>
 </body>
 </html>
