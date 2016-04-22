@@ -1,5 +1,7 @@
 //暴露全局的函数
-
+window.addEventListener("load",function() {
+     FastClick.attach( document.body );
+}, false );
 function GetRequest() {   
    var url = location.search; //获取url中"?"符后的字串   
    var theRequest = new Object();   
@@ -13,6 +15,7 @@ function GetRequest() {
    return theRequest;   
 }  
 $(function(){
+
 	//初始化页面的通用脚本
 	//1、页面rem计算 
 	function setZoom(){
@@ -35,6 +38,7 @@ $(function(){
 	$("input").one("tap",function(){
 		$(this).val("");
 	})
+
 
 })
 

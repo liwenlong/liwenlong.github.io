@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/order.css">
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/vue.min.js"></script>
-	
+	<script type="text/javascript" src="js/fastclick.js"></script>
 	<script src="js/common.js"></script>
 	<script id="order_script" type="text/x-template">
 		<div class="title_top">
@@ -33,14 +33,13 @@
 			 	<p class="h3_title">入住人</p>
 			 	<ul class="person_list has_hb_ok">
 			 		<li v-for="person in user_info">
-			 		   <a href="edit_person.html?user_id=123" >
+			 		   <a href="edit_person.html?user_id=123">
 			 		   		<h3>
 			 					{{person.people_name}}
 				 			</h3>
 				 			<p>身份证：<span>{{person.identity}}</span></p>
 				 			<p>手&nbsp;机：<span>{{person.mobile}}</span></p>
 			 		   </a>
-			 			
 			 			<div class="order_hb_zt " ></div>
 			 		</li>
 			 		
@@ -73,6 +72,9 @@
 	 </div>
 	 
 	<script>
+	window.addEventListener("load",function() {
+	     FastClick.attach( document.body );
+	}, false );
 		function loadDate(){
 			var  urlObj = GetRequest();
 			// http://ljdf.dotalk.cn/api-cgi-product/detail?room_id=1009
@@ -110,13 +112,15 @@
 	<script type="text/javascript" src="js/frozen.js"></script>
 	<script>
 	function init_dh(){
-		$(".has_hb_ok li").on("tap",function(){
-		 	var hb=$(this).find(".order_hb_zt")
+		$(".order_hb_zt ").on("tap",function(){
+			
+		 	var hb=$(this);
 		 	if(hb.hasClass("hb_ok")){
 	 			hb.removeClass("hb_ok");
 		 	}else{
 		 		hb.addClass("hb_ok");
 		 	}
+		 	return false;
 		 	
 		 })
 		$("#zf").on("tap",function(){

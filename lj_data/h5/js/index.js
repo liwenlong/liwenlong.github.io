@@ -1,3 +1,6 @@
+window.addEventListener("load",function() {
+     FastClick.attach( document.body );
+}, false );
 function init(data){
 	//vue实例
 	setZoom();
