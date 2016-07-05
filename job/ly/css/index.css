@@ -1,0 +1,280 @@
+.wrap{
+	width: 10.8rem;
+	height: auto;
+	background: #000;
+	min-height: 10rem;
+	padding: 0;
+	margin: 0;
+	font-size: .14rem;
+	color: white;
+}
+
+.head{
+	padding: 0.1rem;
+	line-height: 1rem;
+	height: 1rem;
+	overflow: hidden;
+}
+.logo{
+	padding-top: .1rem;
+	height:.8rem;
+}
+.nav{
+	float: right;
+	font-size: .3rem;
+	color: white;
+	margin-right: .1rem;
+}
+.nav a{
+	color: white;
+	padding: 0 0.05rem;
+	font-weight: bold;
+}
+.nav a:hover,a.on{
+	color: #f1553c;
+}
+
+.c_dh{
+	height: 2.8rem;
+	overflow: visible; 
+	position: relative;
+	width: 10.8rem;
+}
+.c_dh img{
+	position: absolute;
+	top:-0.18rem;
+	height: 3.25rem;
+	width: 10.8rem;
+}
+.c_dh h3{
+	position: relative;
+	top:.7rem;
+	width: 10.8rem;
+	text-align: center;
+	font-size: .6rem;
+	line-height: .8rem;
+	color: white;
+	font-weight: bold;
+}
+.black{
+	
+	background: black;
+}
+.grey{
+	
+	background:#1a1a1a;
+}
+.bigPic{
+	width: 10.8rem;
+	height: 4.6rem;
+}
+
+
+.ui-slider{
+	position: relative;
+	padding-top: 0px;
+	width: 10.8rem;
+	height: 4.6rem;
+}
+
+.ui-slider-content {
+	display: -webkit-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%
+}
+
+.ui-slider-content>li {
+	-webkit-box-flex: 1;
+	width: 100%;
+	height: 100%
+}
+
+.ui-slider-content>li img {
+	display: block;
+	width: 100%
+}
+
+.ui-slider-content>li span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%
+}
+
+.ui-slider-content>li.active {
+	opacity: .5
+}
+
+.ui-slider-indicators {
+
+	position: absolute;
+	display: -webkit-box;
+	-webkit-box-pack: end;
+	
+	bottom: 10px;
+	left:7rem;
+	font-size: 0;
+	padding: 0.1rem;
+	display: none;
+}
+
+.ui-slider-indicators li {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 0;
+	width: .5rem;
+	height: .5rem;
+	background-color: rgba(255,255,255,.5);
+	border-radius: .25rem;
+	margin-right: .4rem;
+	-webkit-box-sizing: border-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	position: relative;
+	padding: 0;
+}
+.ui-slider-indicators li.current{
+	background-color: rgba(255,255,255,1);
+}
+.dh{
+	padding: .3rem .1rem .4rem .1rem;
+	color: white;
+}
+.dh a{
+	color: white;
+	font-size: .3rem;
+	line-height: .4rem;
+	display: inline-block;
+	min-width: 1.7rem;
+	text-align: center;
+}
+.dh a img{
+	margin: 0 auto;
+	width: .5rem;
+	height: .5rem;
+	padding: .2rem;
+	border: 1px solid #4d4d4d;
+	background: #171717;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.dh a:hover img,.dh a.on img{
+	
+	background: #e03e25;
+}
+.c_title{
+	height: 1rem;
+	padding: .5rem .2rem;
+	font-size: .5rem;
+	line-height: 1rem;
+}
+.chr{
+	display: inline-block;
+	height: .1rem;
+	border-top: 1px solid white;
+	width: 3.05rem;
+}
+.c_title_center{
+	width: 3rem;
+	display: inline-block;
+	text-align: center;
+	padding: 0 .5rem;
+}
+.c_list1{
+	margin: 0 auto;
+	width: 9.8rem;
+	overflow: hidden;
+	padding-bottom: .2rem;
+	font-size: 0.35rem;
+}
+.c_list1 ul{
+	height: 3.4rem;
+}
+.c_list1 li{
+	width:2.13rem;
+	margin-left: .3rem;
+	float: left;
+	text-align: center;
+}
+
+.c_list1 img{
+	width:2.13rem;
+	height: 2.7rem;
+	border: 1px solid #7b7b7a;
+}
+.slider{
+	position: relative;
+	height: 3.4rem;
+	width: 9.8rem;
+}
+.slider-content{
+	position: absolute;
+}
+.c_head{
+	font-size: .3rem;
+	height: .8rem;
+	line-height: .8rem;
+	padding-left: .3rem;
+}
+.more{
+	color: white;
+	float: right;
+	padding-right: .5rem;
+
+}
+.kb{
+	height: 1rem;
+}
+.man_block{
+	padding: .2rem .5rem .5rem .5rem;
+}
+.man_top{
+	margin-bottom: .5rem;
+}
+.man_top img{
+	width: 2.24rem;
+	height: 3rem;
+}
+.man_des{
+	width: 7rem;
+}
+.man_des{
+	color: white;
+	font-size: .27rem;
+	line-height: .5rem;
+}
+.man_name{
+	font-size: .4rem;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.man_list{
+	width: 100%;
+	height: auto;
+}
+.man_list li{
+	position: relative;
+	width: 2.35rem;
+	float: left;
+	border: 1px solid  #7b7b7a;
+}
+.man_list li img{
+	width: 2.35rem;
+}
+.man_list li p{
+	position: absolute;
+	bottom:0;
+	line-height: .24rem;
+	font-size: .24rem;
+	background: rgb(255,255,255,.8);
+}
