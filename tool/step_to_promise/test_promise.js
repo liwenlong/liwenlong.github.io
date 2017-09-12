@@ -27,18 +27,30 @@ function Lpromise(fn){
 
 Lpromise.prototype = {
     then:function(resolveHandle,rejectHandle,processHandle) {
+         var result;
          if(this.status == "resolve") {
-             resolveHandle(this.data);
+             result = resolveHandle(this.data);
          }
          if(this.status == "reject"){
-            rejectHandle(this.data);
+            result = rejectHandle(this.data);
          }
          if(this.status =="pending"){
              if(typeof processHandle != 'undefined'){
-                 processHandle(this.data);
+                result = processHandle(this.data);
              }
              this.resolveHandle = resolveHandle;
              this.rejectHandle = rejectHandle;
+         }
+        //  判断返回值是否有promise
+        // 如果有，则把返回值暴露出去
+        // 如果没有，则new 出来一个新的promise,值是数字或者之类的
+         if(result == 'promise'){
+
+         }else{
+             result = new Lpromise(function(){
+
+             });
+             return result;
          }
     }
 }
