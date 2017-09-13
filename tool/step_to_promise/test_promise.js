@@ -44,17 +44,19 @@ Lpromise.prototype = {
         //  判断返回值是否有promise
         // 如果有，则把返回值暴露出去
         // 如果没有，则new 出来一个新的promise,值是数字或者之类的
-         if(result == 'promise'){
-
-         }else{
-             result = new Lpromise(function(){
-
-             });
-             return result;
-         }
+        //  if(result == 'promise'){
+         //
+        //  }else{
+        //      result = new Lpromise(function(){
+         //
+        //      });
+        //      return result;
+        //  }
+        return new Lpromise(function(reslove,reject){
+            
+        })
     }
 }
-
 
 // mocha test
 var lwl = new Lpromise(function(resolve,reject){
@@ -71,4 +73,50 @@ lwl.then(function(data){
     console.log("success:" +data);
 },function(data){
     console.log("reject:" +data);
+}).then(function(data){
+    console.log("true ok");
+})
+
+
+// 实际上内容
+
+var lwl = new Promise(function(resolve,reject){
+    setTimeout(function(){
+        var ran_number  = Math.random();
+        if (ran_number > 0.5){
+            resolve(ran_number);
+        }else{
+            reject(ran_number);
+        }
+    },1000)
+})
+lwl.then(function(data){
+    console.log("success:" +data);
+},function(data){
+    console.log("reject:" +data);
+}).then(function(data){
+    console.log(" true ok");
+},function(){
+    console.log("reject second");
+})
+
+
+
+var lwl = new Promise(function(resolve,reject){
+    setTimeout(function(){
+        var ran_number  = Math.random();
+        if (ran_number > 0.5){
+            resolve(ran_number);
+        }else{
+            reject(ran_number);
+        }
+    },1000)
+})
+lwl.then(function(data){
+    console.log("success:" +data);
+}).then(function(data){
+    console.log(" true ok");
+})
+.catch(function(data){
+    console.log("erroe")
 })
