@@ -21,15 +21,13 @@ Event.prototype  ={
        }
        return this;
     },
-    triggle:function(ev,fn){
-       if(typeof fn == 'undefined'){
+    trigger:function(ev,cb){
+       var list = this.list[ev];
+       if(typeof cb == 'undefined'){
             for(var i = 0; i<list.length; i++){
-                if(cb === list[i]){
-                    list[i]();
-                }
+                list[i]();
             }
        }else{
-            var list = this.list[ev];
             for(var i = 0; i<list.length; i++){
                 if(cb === list[i]){
                     list[i]();
@@ -39,14 +37,14 @@ Event.prototype  ={
     },
     once:function(ev,cb,number){
         number = number || 1;
-        var new_cb = function(){
-           if(number){
-              cb();
-              number--;
-           }
+        var _this = this;
+        function wrap(){
+            cb.apply(_this,argument);
+             _this.off(ev,wrap);
+             _this = null;
         }
-        this.on(ev,new_cb)
+        this.on(ev,wrap)
     }
 }
-
+Event.prototype.fire = Event.prototype.trigger;
 Event.prototype.constructor = Event;

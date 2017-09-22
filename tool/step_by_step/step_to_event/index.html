@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="test_event.js"></script>
+	<script>
+		var ev = new Event();
+		ev.on("a",function(){
+			console.log("a");
+		})
+		ev.on("b",function(){
+			console.log("b");
+		})
+		ev.on("a",function(){
+			console.log("a");
+		})
+		ev.on("b",function(){
+			console.log("b");
+		})
+        
+		ev.trigger("a");
+		ev.once("c",function(){
+			console.log("c");
+		})
+		ev.trigger("a");
+		ev.trigger("c");
+		ev.trigger("c");
+		ev.trigger("c");
+		ev.trigger("a");
+	</script>
+</body>
+</html>
