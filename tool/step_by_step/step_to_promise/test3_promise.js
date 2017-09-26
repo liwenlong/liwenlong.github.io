@@ -4,19 +4,16 @@ function Vpromise(fn){
    this.error_cb_list = [];
    this.call_cb_list = [];
    var _this = this;
-   setTimeout(function(){
-     fn(function(data){
+  
+    fn(function(data){
         _this.resolve(data);
-     },function(){
+    },function(){
         _this.reject(data);
-     })
-   },0)
-   
+    })
 }
 
 
 Vpromise.prototype.then = function(callback,errorback){
-      console.log(callback);
       var resolve,reject;
       var promise = new Vpromise(function(res,rej){
           resolve = res;
@@ -31,7 +28,7 @@ Vpromise.prototype.then = function(callback,errorback){
           var new_cb = function(promise,resolve,callback){
              return function(data){
                   var result = callback(data);
-                  if(result in Vpromise && result.then){
+                  if(typeof result == 'object' && result instanceof Vpromise){
                       result.then(function(data){
                          resolve(data);
                       })
@@ -57,7 +54,6 @@ Vpromise.prototype.resolve = function(data){
 }
 
 Vpromise.prototype.triggle = function(){
-    console.log(this.call_cb_list);
      if(this.status == 'pending'){
          return ;
      }

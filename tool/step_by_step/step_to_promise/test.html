@@ -23,13 +23,14 @@
                 r > 0.01? res("sedonc"+r):rej(r);
              },200);
          });
+         return c;
      },function(data){
          console.log("error:"+data);
      })
      .then(function(data){
          setTimeout(function(){
              console.log(data)
-         },3000)
+         },1000)
         //  console.log(data);
      })
 
