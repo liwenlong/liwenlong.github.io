@@ -21,7 +21,6 @@
     function defineReactive (obj, key, val) {
 
       var dep = new Dep();
-
       Object.defineProperty(obj, key, {
         get: function () {
           // 添加订阅者watcher到主题对象Dep

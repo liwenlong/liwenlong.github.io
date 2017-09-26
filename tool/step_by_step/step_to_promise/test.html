@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>test promise</title>
-    <script src="test2_promise.js"></script>
+    <script src="test3_promise.js"></script>
 </head>
 <body>
   <script>
@@ -21,9 +21,8 @@
             setTimeout(function(){
                 var r = Math.random();
                 r > 0.01? res("sedonc"+r):rej(r);
-             },1000);
+             },200);
          });
-         return c;
      },function(data){
          console.log("error:"+data);
      })
